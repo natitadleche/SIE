@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIE - Control de Obras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="main-container">
+        <div class="header">
+            <h2>SIE</h2>
+            <p>Sistema de Control de Obras</p>
+        </div>
+
+        <!-- PANTALLA ÚNICA DE INICIO DE SESIÓN -->
+        <div id="form-login" class="form-section active">
+            <form id="loginForm">
+                <div class="input-group">
+                    <label>Teléfono</label>
+                    <input type="text" id="login-telefono" required>
+                </div>
+                <div class="input-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn">Ingresar</button>
+            </form>
+        </div>
+
+        <!-- PANEL DE CONTROL (Se muestra tras iniciar sesión) -->
+        <div id="form-dashboard" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">
+                <div>
+                    <h3 id="dash-title" style="margin: 0; color: #0056b3;"></h3>
+                    <p id="dash-subtitle" style="margin-top: 5px; font-size: 14px; color: #666;"></p>
+                </div>
+                <button onclick="location.reload()" class="btn-rojo" style="width: auto; padding: 8px 15px; margin: 0;">Cerrar Sesión</button>
+            </div>
+            
+            <!-- ÍNDICE / MENÚ PRINCIPAL -->
+            <div id="dash-menu" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
+                <!-- Los botones se inyectan desde app.js -->
+            </div>
+            
+            <!-- CONTENEDOR DE VISTAS -->
+            <div id="dash-content">
+                
+                <!-- 1. PANTALLA PRINCIPAL -->
+                <div id="sec-principal" class="seccion-admin">
+                    <h4 style="color: #333;">Asistencia y Asignación de Obras (Hoy)</h4>
+                    <div id="tabla-principal" style="overflow-x: auto;"></div>
+                </div>
+
+                <!-- 2. PANTALLA PERSONAL (Alta/Baja) -->
+                <div id="sec-personal" class="seccion-admin" style="display: none;">
+                    <h4 style="color: #333;">Gestión de Personal</h4>
+                    <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #ddd; margin-bottom: 20px;">
+                        <h5 style="margin-top: 0;">Dar de Alta Nuevo Trabajador</h5>
+                        <form id="registerForm">
+                            <div class="input-group"><label>Nombre Completo</label><input type="text" id="reg-nombre" required></div>
+                            <div class="input-group"><label>Teléfono</label><input type="text" id="reg-telefono" required></div>
+                            <div class="input-group"><label>Contacto de Emergencia</label><input type="text" id="reg-contacto" required></div>
+                            <div class="input-group-checkbox" style="margin-bottom: 10px;">
+                                <input type="checkbox" id="reg-manejar"><label>¿Sabe manejar?</label>
+                            </div>
+                            <div class="input-group"><label>Contraseña Temporal</label><input type="password" id="reg-password" required></div>
+                            <button type="submit" class="btn" style="background: #28a745;">Crear Cuenta de Personal</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- 3. PANTALLAS RESTANTES (Estructura lista para conectar a BD) -->
+                <div id="sec-herramientas" class="seccion-admin" style="display: none;">
+                    <h4 style="color: #333;">Gestión de Herramientas</h4>
+                    <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #ddd;">
+                        <p><i>Aquí irá el formulario para registrar y dar de baja pulidoras, taladros, etc.</i></p>
+                    </div>
+                </div>
+                
+                <div id="sec-vehiculos" class="seccion-admin" style="display: none;">
+                    <h4 style="color: #333;">Gestión de Vehículos</h4>
+                    <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #ddd;">
+                        <p><i>Aquí irá el formulario para registrar placas, modelos y asignar unidades.</i></p>
+                    </div>
+                </div>
+
+                <div id="sec-clientes" class="seccion-admin" style="display: none;">
+                    <h4 style="color: #333;">Gestión de Clientes</h4>
+                    <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #ddd;">
+                        <p><i>Aquí irá el formulario para registrar empresas, RFC y giros comerciales.</i></p>
+                    </div>
+                </div>
+
+                <div id="sec-obras" class="seccion-admin" style="display: none;">
+                    <h4 style="color: #333;">Gestión de Obras</h4>
+                    <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #ddd;">
+                        <p><i>Aquí irá el formulario para crear proyectos nuevos y asignarles presupuesto.</i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="mensaje" class="message"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

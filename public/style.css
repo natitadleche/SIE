@@ -1,0 +1,28 @@
+* { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: #f4f7f6; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+.container { background: white; width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; }
+.header { background: #0056b3; color: white; text-align: center; padding: 20px; }
+.header h2 { margin: 0; font-size: 24px; }
+.header p { margin: 5px 0 0; font-size: 14px; opacity: 0.8; }
+.tabs { display: flex; cursor: pointer; }
+.tabs button { flex: 1; padding: 15px; border: none; background: #eee; font-weight: bold; cursor: pointer; transition: 0.3s; }
+.tabs button.active { background: white; color: #0056b3; border-bottom: 2px solid #0056b3; }
+.form-section { display: none; padding: 20px; }
+.form-section.active { display: block; }
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; font-size: 13px; color: #333; margin-bottom: 5px; }
+.input-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+.input-group-checkbox { display: flex; align-items: center; margin-bottom: 20px; font-size: 14px; color: #333; }
+.input-group-checkbox input { margin-right: 10px; }
+.btn { width: 100%; background: #0056b3; color: white; border: none; padding: 12px; border-radius: 4px; font-size: 16px; cursor: pointer; transition: 0.3s; }
+.btn:hover { background: #004494; }
+.message { text-align: center; padding: 10px; margin: 0 20px 20px; border-radius: 4px; display: none; font-size: 14px; }
+.message.success { background: #d4edda; color: #155724; display: block; }
+.message.error { background: #f8d7da; color: #721c24; display: block; }
+/* DISEÑO DE TABLAS SQL Y BOTONES EXTRA */
+.tabla-sql { width: 100%; border-collapse: collapse; font-size: 14px; text-align: left; background: white; margin-top: 15px; }
+.tabla-sql th { background-color: #0056b3; color: white; padding: 12px; }
+.tabla-sql td { border-bottom: 1px solid #ddd; padding: 12px; }
+.tabla-sql tr:hover { background-color: #f1f1f1; }
+.btn-rojo { width: 100%; background: #dc3545; color: white; border: none; padding: 10px; border-radius: 4px; font-size: 15px; cursor: pointer; }
+.btn-rojo:hover { background: #c82333; }
