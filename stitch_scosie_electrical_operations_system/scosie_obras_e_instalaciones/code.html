@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-tertiary-container":"#d9971a","on-primary-fixed":"#001c3b","inverse-on-surface":"#eaf1ff","on-primary-fixed-variant":"#2d486d","secondary-container":"#5bb8fe","primary-container":"#1e3a5f","on-secondary-fixed":"#001d31","secondary-fixed-dim":"#93ccff","surface-container-lowest":"#ffffff","primary":"#022448","outline":"#74777f","surface":"#f8f9ff","secondary-fixed":"#cce5ff","on-primary":"#ffffff","error-container":"#ffdad6","on-secondary-fixed-variant":"#004b73","on-error":"#ffffff","secondary":"#006398","on-error-container":"#93000a","surface-tint":"#455f87","on-secondary":"#ffffff","tertiary-fixed-dim":"#ffba46","background":"#f8f9ff","inverse-surface":"#213145","tertiary-container":"#503400","on-tertiary-fixed-variant":"#614000","primary-fixed":"#d5e3ff","on-surface":"#0b1c30","surface-container-low":"#eff4ff","surface-container-highest":"#d3e4fe","surface-dim":"#cbdbf5","on-background":"#0b1c30","inverse-primary":"#adc8f5","surface-variant":"#d3e4fe","tertiary":"#342000","outline-variant":"#c4c6cf","on-surface-variant":"#43474e","error":"#ba1a1a","on-secondary-container":"#00476e","on-tertiary":"#ffffff","on-primary-container":"#8aa4cf","surface-bright":"#f8f9ff","surface-container-high":"#dce9ff","primary-fixed-dim":"#adc8f5","surface-container":"#e5eeff","on-tertiary-fixed":"#281800","tertiary-fixed":"#ffddb0"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-sm":"0.5rem","space-xs":"0.25rem","space-xxs":"0.125rem",gutter:"1.25rem","space-xl":"1.5rem","space-md":"0.75rem","space-3xl":"3rem","gutter-lg":"1.5rem",margin:"1.5rem","space-2xl":"2rem","gutter-sm":"0.75rem","margin-mobile":"1rem","margin-desktop":"2rem","space-lg":"1rem"},fontFamily:{"headline-xl-mobile":["IBM Plex Sans"],"title-md":["IBM Plex Sans"],"body-md":["IBM Plex Sans"],"headline-xl":["IBM Plex Sans"],"body-sm":["IBM Plex Sans"],"label-md":["IBM Plex Sans"],"headline-lg-mobile":["IBM Plex Sans"],"headline-md":["IBM Plex Sans"],"tabular-code":["IBM Plex Sans"],"body-lg":["IBM Plex Sans"],"label-sm":["IBM Plex Sans"],"headline-lg":["IBM Plex Sans"],"title-lg":["IBM Plex Sans"]},fontSize:{"headline-xl-mobile":["28px",{lineHeight:"34px",letterSpacing:"-0.01em",fontWeight:"700"}],"title-md":["16px",{lineHeight:"22px",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-xl":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"label-md":["13px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}],"headline-lg-mobile":["22px",{lineHeight:"28px",fontWeight:"600"}],"headline-md":["20px",{lineHeight:"28px",fontWeight:"600"}],"tabular-code":["13px",{lineHeight:"18px",letterSpacing:"0em",fontWeight:"500"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"600"}],"title-lg":["18px",{lineHeight:"24px",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-primary z-50 flex flex-col justify-between overflow-y-auto shadow-2xl"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-primary border-b border-primary-container"><img alt="SCOSIE Logo Industrial" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XJ63Ts5mdzltlOGYMOzBepqTlVQV86k3Kg59mxKFUpQwhynNZmxDvip4RjrIx6KZcidvYMt1tquLxppWKQNe4MEO-GhgSDGuaXZyVOmuCMsCpmaKqOGOhzw8C94IOTrA1Knp7RRF1iNG-imZCLSVcQH_fgPIalzv-hnxk6Ea2NkaQ1-6hepV0_4hW_uXx5J5_OODWjllNDxmqWpe4gUWkyl86O8Fv7YXJ0lOT3PvX-"/><div class="flex flex-col"><span class="font-title-md text-title-md text-on-primary tracking-tight leading-none">SCOSIE</span><span class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-wider">Control Eléctrico MX</span></div></div><div class="p-space-md"><div class="bg-primary-container p-space-sm rounded-lg flex flex-col gap-space-xs"><label class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider flex items-center gap-space-xs"><span class="material-symbols-outlined text-sm">shield_person</span>Perfil de Operación</label><select class="w-full bg-primary text-on-primary font-label-md text-label-md rounded px-space-xs py-1 border border-outline/30 focus:outline-none"><option value="jefe">Jefe (Ing. Eléctrico)</option><option value="admin">Administrador</option><option value="cuadrilla">Personal / Cuadrilla</option></select></div></div><nav class="px-space-md flex flex-col gap-space-md" data-active-classes="bg-primary-container text-on-primary font-title-md rounded-lg"><div class="flex flex-col gap-space-xxs"><span class="px-space-xs font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-wider">Principal</span><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="panel-general" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">dashboard</span><span class="font-body-md text-body-md">Panel General</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="mi-asistencia" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">badge</span><span class="font-body-md text-body-md">Mi Asistencia</span></div><span class="bg-secondary text-on-secondary font-label-sm text-label-sm px-1.5 py-0.5 rounded-full">Hoy</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="dashboard-administrativo" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">analytics</span><span class="font-body-md text-body-md">Dashboard Administrativo</span></div></a></div><div class="flex flex-col gap-space-xxs"><span class="px-space-xs font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-wider">Gestión Operativa</span><a aria-current="page" class="flex items-center justify-between px-space-sm py-2 transition-colors bg-primary-container text-on-primary font-title-md rounded-lg" data-path="obras-e-instalaciones" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">precision_manufacturing</span><span class="font-body-md text-body-md">Obras e Instalaciones</span></div><span class="bg-primary-fixed-dim text-on-primary-fixed font-label-sm text-label-sm px-1.5 py-0.5 rounded-full">12</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="bitacoras-y-evidencias" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">fact_check</span><span class="font-body-md text-body-md">Bitácoras y Evidencias</span></div><span class="bg-tertiary-fixed-dim text-on-tertiary-fixed font-label-sm text-label-sm px-1.5 py-0.5 rounded-full">5</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="personal-y-cuadrillas" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">group</span><span class="font-body-md text-body-md">Personal y Cuadrillas</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="clientes-y-contratos" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">handshake</span><span class="font-body-md text-body-md">Clientes y Contratos</span></div></a></div><div class="flex flex-col gap-space-xxs"><span class="px-space-xs font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-wider">Logística e Inventarios</span><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="herramientas-y-equipos" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">construction</span><span class="font-body-md text-body-md">Herramientas y Equipos</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="materiales" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">inventory_2</span><span class="font-body-md text-body-md">Materiales</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="flotilla-de-vehiculos" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">local_shipping</span><span class="font-body-md text-body-md">Flotilla de Vehículos</span></div></a></div><div class="flex flex-col gap-space-xxs"><span class="px-space-xs font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-wider">Gestión Especializada</span><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="dictamenes-electricos" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">verified</span><span class="font-body-md text-body-md">Dictámenes Eléctricos</span></div><span class="bg-error text-on-error font-label-sm text-label-sm px-1.5 py-0.5 rounded-full">UVIE</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="reportes-y-estadisticas" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">query_stats</span><span class="font-body-md text-body-md">Reportes y Estadísticas</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors" data-path="configuracion-y-sistema" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">settings</span><span class="font-body-md text-body-md">Configuración</span></div></a></div></nav></div><div class="p-space-md border-t border-primary-container text-center"><span class="font-label-sm text-label-sm text-primary-fixed-dim block">SCOSIE Cloud Core v2.4</span><span class="font-label-sm text-label-sm text-outline-variant block font-tabular-code">NOM-001-SEDE-2012 Compliance</span></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-lg">search</span><input class="w-full pl-10 pr-4 py-2 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface border border-outline-variant/40 focus:border-secondary focus:outline-none" placeholder="Buscar obra, técnico, herramienta o tablero..." type="text"/></div><div class="hidden xl:flex items-center gap-space-xs text-on-surface-variant whitespace-nowrap bg-surface-container px-space-sm py-1.5 rounded"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm font-tabular-code text-on-secondary-container">SQL Online (MX-CENTRAL)</span></div></div><div class="flex items-center gap-space-lg"><div class="hidden md:flex flex-col text-right"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Hora Local CDMX</span><span class="font-label-md text-label-md font-tabular-code text-on-surface">14:28:40 hrs • 24 Oct</span></div><button class="relative p-2 text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-4 h-4 bg-error text-on-error font-label-sm text-label-sm rounded-full flex items-center justify-center">3</span></button><div class="flex items-center gap-space-sm pl-space-md border-l border-outline-variant/40"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4ZLyDwP60QvMN54yuze4tVK2bsWm-75X75oGms4B8In3gfBrQ36wRyPJLaRl2CvOYl1kjgDAoMajcZ8e9LH3MB9UFIOhiiexSdtdKwKhqITnxRlv89EJO4OTsXc6wNkFq79gF_JYrCmdwEXVAb96G-JVoLK7sMEGW03wrTBh_Kiu_-nBtbJNj6EAqyfty93V0Y5OA7ZI5CP6vfnkHq5tVzQ8RNKPwR9o4UVgEL5M"/><div class="flex flex-col text-left"><span class="font-title-md text-title-md text-on-surface leading-tight">Ing. David Reséndiz</span><span class="font-label-sm text-label-sm text-secondary font-semibold">Jefe Técnico &amp; Administrador</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Sub-header Operativo y Métricas Rápidas -->
+<section class="p-space-xl pb-0">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-secondary mb-space-xxs">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">SCOSIE • Gestión de Obras Baja &amp; Media Tensión</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Obras y Proyectos Eléctricos</h1>
+<span class="bg-primary text-on-primary font-tabular-code text-body-sm px-2.5 py-0.5 rounded-full font-bold">18 ACTIVAS</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Control de ejecución, avance volumétrico, cuadrillas de campo y memorias NOM-001-SEDE-2012.</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="h-10 px-space-md bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded-lg flex items-center gap-space-xs transition-colors shadow-sm" id="btn-exportar-reporte">
+<span class="material-symbols-outlined text-lg">file_download</span>
+<span>Dossier Semanal (PDF)</span>
+</button>
+<button class="h-10 px-space-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md rounded-lg flex items-center gap-space-xs shadow-md transition-all transform active:scale-95" id="btn-nueva-obra">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+<span class="tracking-wide">+ Registrar Nueva Obra</span>
+</button>
+</div>
+</div>
+<!-- Mini KPIs Banner -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md mb-space-lg">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase tracking-wider">En Ejecución</span>
+<span class="font-headline-md text-headline-md text-on-surface font-tabular-code">9 Obras</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium block mt-0.5">7 Cuadrillas en campo</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed/40 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">engineering</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase tracking-wider">Monto Contratado</span>
+<span class="font-headline-md text-headline-md text-on-surface font-tabular-code">$4.82M MXN</span>
+<span class="font-body-sm text-body-sm text-on-tertiary-container font-medium block mt-0.5">84% facturación estimada</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed/30 flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined">payments</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase tracking-wider">Cumplimiento UVIE</span>
+<span class="font-headline-md text-headline-md text-on-surface font-tabular-code">96.4%</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium block mt-0.5">0 No Conformidades</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed/40 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">verified</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase tracking-wider">Bitácoras Hoy</span>
+<span class="font-headline-md text-headline-md text-on-surface font-tabular-code">14 Entregas</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium block mt-0.5">Última hace 12 min</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">history_edu</span>
+</div>
+</div>
+</div>
+<!-- Barra de Control y Filtros Dinámicos -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex-1 flex flex-col sm:flex-row items-center gap-space-sm w-full">
+<!-- Buscador -->
+<div class="relative w-full sm:max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-lg">filter_alt</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/40 placeholder:text-outline" id="input-buscar-obra" placeholder="Filtrar por código, cliente, dirección o supervisor..." type="text"/>
+</div>
+<!-- Filtro Estado -->
+<div class="w-full sm:w-auto">
+<select class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md py-2 px-space-sm rounded-lg focus:outline-none" id="select-filtro-estado">
+<option value="todos">Todos los Estados (18)</option>
+<option value="proceso">En Proceso (9)</option>
+<option value="cotizada">Cotizada / Planificación (4)</option>
+<option value="terminada">Terminada / Entrega (3)</option>
+<option value="archivada">Archivada (2)</option>
+</select>
+</div>
+<!-- Filtro Cliente -->
+<div class="w-full sm:w-auto">
+<select class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md py-2 px-space-sm rounded-lg focus:outline-none" id="select-filtro-cliente">
+<option value="todos">Todos los Clientes</option>
+<option value="walmart">Grupo Walmart MX</option>
+<option value="galerias">Desarrollos Comerciales del Valle</option>
+<option value="insurgentes">Inmobiliaria Corporativa Reforma</option>
+<option value="bajio">Naves Industriales del Bajío</option>
+</select>
+</div>
+</div>
+<!-- Selector de Vista -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg self-end sm:self-auto">
+<button class="px-3 py-1.5 rounded font-label-md text-label-md flex items-center gap-1.5 bg-surface-container-lowest text-primary shadow-sm font-semibold" id="view-toggle-grid">
+<span class="material-symbols-outlined text-base">grid_view</span>
+<span class="hidden sm:inline">Tarjetas</span>
+</button>
+<button class="px-3 py-1.5 rounded font-label-md text-label-md flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface transition-colors" id="view-toggle-table">
+<span class="material-symbols-outlined text-base">table_rows</span>
+<span class="hidden sm:inline">Tabla</span>
+</button>
+</div>
+</div>
+</section>
+<!-- CONTENIDO: VISTA TARJETAS (Grid) -->
+<section class="p-space-xl" id="contenedor-tarjetas">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-lg">
+<!-- TARJETA 1 (Principal de demostración detallada: OB-2024-012) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col justify-between transition-all hover:shadow-xl relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-secondary"></div>
+<div>
+<!-- Cabecera de Tarjeta -->
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex flex-col">
+<span class="font-tabular-code text-body-sm font-bold text-secondary uppercase tracking-wider">OB-2024-012</span>
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-secondary transition-colors">Instalación de Fuerza y Alumbrado Plaza Galerías</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-label-sm text-label-sm font-bold bg-secondary-fixed text-on-secondary-fixed shrink-0">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              En Proceso
+            </span>
+</div>
+<!-- Cliente y Ubicación -->
+<div class="space-y-1.5 mb-space-md text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-outline">apartment</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Desarrollos Comerciales del Valle S.A. de C.V.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-base text-outline shrink-0 mt-0.5">location_on</span>
+<span class="font-body-sm text-body-sm line-clamp-1">Periférico Norte #1024, Naucalpan, Estado de México</span>
+</div>
+</div>
+<!-- Presupuesto y Cronograma -->
+<div class="grid grid-cols-2 gap-space-sm p-space-sm bg-surface-container-low rounded-lg mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Presupuesto</span>
+<span class="font-title-md text-title-md font-tabular-code text-primary font-bold">$485,000 MXN</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Plazo de Entrega</span>
+<span class="font-title-md text-title-md font-tabular-code text-on-surface">15 Nov 2024</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium block">A tiempo (+4 días colgado)</span>
+</div>
+</div>
+<!-- Barra de Avance -->
+<div class="mb-space-md">
+<div class="flex items-center justify-between text-body-sm mb-1.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Fase 3: Cableado y Tableros</span>
+<span class="font-tabular-code font-bold text-secondary text-body-md">72%</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full transition-all duration-500" style="width: 72%;"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm text-on-surface-variant mt-1 font-tabular-code">
+<span>Hito: Peinado Subestación 500kVA</span>
+<span>12 días restantes</span>
+</div>
+</div>
+<!-- Cuadrilla Asignada -->
+<div class="flex items-center justify-between pt-space-xs mb-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Cuadrilla:</span>
+<div class="flex -space-x-2 overflow-hidden">
+<img class="inline-block h-7 w-7 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Técnico electricista mexicano con casco blanco y lentes de protección industrial en obra SCOSIE" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwkpZ72Ahqoe9cOE_Jf4Kfd0hoT3Y7eKhDbpXrCK8rBNDQ3psPuvWxTGgfd1coloL-NkeP1kIMNRALT7cxVonCH-7_r8AA5_w121bVmetdkvuorh90d-AmE2vn0ems6G5jVRHq1oJueu06aIIowJ0c1ZlITx1EZsbcyI68nkBFFfiLhZ74YpE3hGMpgDVkuc90laDg1BFbj38QqjUFmpaQiqua3p00ygWVmVmvxsg"/>
+<img class="inline-block h-7 w-7 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Supervisor de ingeniería eléctrica industrial con chaleco naranja reflejante y radio civil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCEPEnesN76Hj-ZgnRqvo4fo5NyCmKeJlGLaFPjMS1mgwopVffZicjJF5_BkJrtUFe2X85ulxfM_shgrR4ZEkseWPesCmWUBeleg1Gr2IdviLCsSvq-M0F1uhFKN9q8qm3sCiwrFwoFs4Wdaqf-6yZOF2lj6I3ATXbeoU9M-G4cPjgDC_dx5vbBK9nEx4yKNReYHZN4PTbSZ1KFb6C32d9oEXSXDsf5Znc9jlww3A"/>
+<div class="h-7 w-7 rounded-full bg-primary-fixed text-on-primary-fixed text-label-sm font-bold flex items-center justify-center ring-2 ring-surface-container-lowest font-tabular-code">
+                  JR
+                </div>
+<div class="h-7 w-7 rounded-full bg-surface-container-highest text-on-surface text-label-sm font-bold flex items-center justify-center ring-2 ring-surface-container-lowest font-tabular-code">
+                  +2
+                </div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-tabular-code">NP300 #02 Asig.</span>
+</div>
+</div>
+<!-- Botones de Acción -->
+<div class="flex items-center gap-space-xs pt-space-sm">
+<button class="btn-abrir-expediente flex-1 py-2 px-space-md bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md rounded-lg flex items-center justify-center gap-space-xs transition-colors shadow-sm" data-obra="OB-2024-012">
+<span class="material-symbols-outlined text-base">folder_open</span>
+<span>Ver Expediente Completo</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" title="Editar parámetros de obra">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" title="Opciones avanzadas">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</div>
+</div>
+<!-- TARJETA 2: Mantenimiento Nave Cuautitlán (En Proceso Avanzado) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col justify-between transition-all hover:shadow-xl relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-secondary"></div>
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex flex-col">
+<span class="font-tabular-code text-body-sm font-bold text-secondary uppercase tracking-wider">OB-2024-008</span>
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-secondary transition-colors">Mantenimiento Transformador Nave Cuautitlán</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-label-sm text-label-sm font-bold bg-secondary-fixed text-on-secondary-fixed shrink-0">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              En Proceso
+            </span>
+</div>
+<div class="space-y-1.5 mb-space-md text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-outline">factory</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Naves Industriales del Bajío S.A.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-base text-outline shrink-0 mt-0.5">location_on</span>
+<span class="font-body-sm text-body-sm line-clamp-1">Parque Industrial La Luz, Cuautitlán Izcalli, Edo. Mex</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm p-space-sm bg-surface-container-low rounded-lg mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Presupuesto</span>
+<span class="font-title-md text-title-md font-tabular-code text-primary font-bold">$340,000 MXN</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Plazo de Entrega</span>
+<span class="font-title-md text-title-md font-tabular-code text-on-surface">28 Oct 2024</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium block">Etapa final de pruebas</span>
+</div>
+</div>
+<div class="mb-space-md">
+<div class="flex items-center justify-between text-body-sm mb-1.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Fase 4: Pruebas Dieléctricas &amp; Aceite</span>
+<span class="font-tabular-code font-bold text-secondary text-body-md">88%</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 88%;"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm text-on-surface-variant mt-1 font-tabular-code">
+<span>Megger TTR Aprobado</span>
+<span>4 días restantes</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs mb-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Cuadrilla:</span>
+<div class="flex -space-x-2 overflow-hidden">
+<div class="h-7 w-7 rounded-full bg-primary text-on-primary text-label-sm font-bold flex items-center justify-center ring-2 ring-surface-container-lowest font-tabular-code">
+                  MT
+                </div>
+<div class="h-7 w-7 rounded-full bg-secondary text-on-secondary text-label-sm font-bold flex items-center justify-center ring-2 ring-surface-container-lowest font-tabular-code">
+                  CL
+                </div>
+<div class="h-7 w-7 rounded-full bg-surface-container-high text-on-surface text-label-sm font-bold flex items-center justify-center ring-2 ring-surface-container-lowest font-tabular-code">
+                  +1
+                </div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-tabular-code">Transit Van #05</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-sm">
+<button class="btn-abrir-expediente flex-1 py-2 px-space-md bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded-lg flex items-center justify-center gap-space-xs transition-colors" data-obra="OB-2024-008">
+<span class="material-symbols-outlined text-base">folder_open</span>
+<span>Ver Expediente Completo</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+</div>
+</div>
+<!-- TARJETA 3: Adecuación Eléctrica Corporativo Insurgentes (Cotizada) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col justify-between transition-all hover:shadow-xl relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-outline-variant"></div>
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex flex-col">
+<span class="font-tabular-code text-body-sm font-bold text-outline uppercase tracking-wider">OB-2024-019</span>
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-secondary transition-colors">Adecuación Eléctrica Corporativo Insurgentes</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-label-sm text-label-sm font-bold bg-surface-container-highest text-on-surface-variant shrink-0">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+              Cotizada
+            </span>
+</div>
+<div class="space-y-1.5 mb-space-md text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-outline">business</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Inmobiliaria Corporativa Reforma</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-base text-outline shrink-0 mt-0.5">location_on</span>
+<span class="font-body-sm text-body-sm line-clamp-1">Av. Insurgentes Sur #1602, Crédito Constructor, Benito Juárez, CDMX</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm p-space-sm bg-surface-container-low rounded-lg mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Presupuesto Estimado</span>
+<span class="font-title-md text-title-md font-tabular-code text-primary font-bold">$190,000 MXN</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Fecha Arranque Tentativa</span>
+<span class="font-title-md text-title-md font-tabular-code text-on-surface">10 Nov 2024</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium block">Revisión de planos</span>
+</div>
+</div>
+<div class="mb-space-md">
+<div class="flex items-center justify-between text-body-sm mb-1.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Fase 1: Levantamiento y Aprobación</span>
+<span class="font-tabular-code font-bold text-on-surface-variant text-body-md">15%</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-outline rounded-full" style="width: 15%;"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm text-on-surface-variant mt-1 font-tabular-code">
+<span>Memoria de Cálculo pendiente</span>
+<span>En espera anticipo</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs mb-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Supervisor:</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Ing. David Reséndiz</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-tabular-code">Sin Vehículo</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-sm">
+<button class="btn-abrir-expediente flex-1 py-2 px-space-md bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded-lg flex items-center justify-center gap-space-xs transition-colors" data-obra="OB-2024-019">
+<span class="material-symbols-outlined text-base">folder_open</span>
+<span>Ver Expediente Completo</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+</div>
+</div>
+<!-- TARJETA 4: Alumbrado LED Estacionamiento Plaza Oriente (Terminada) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col justify-between transition-all hover:shadow-xl relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-on-tertiary-container"></div>
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex flex-col">
+<span class="font-tabular-code text-body-sm font-bold text-on-tertiary-container uppercase tracking-wider">OB-2024-004</span>
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-secondary transition-colors">Alumbrado LED Estacionamiento Plaza Oriente</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-label-sm text-label-sm font-bold bg-tertiary-fixed text-on-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-xs">done_all</span>
+              Terminada
+            </span>
+</div>
+<div class="space-y-1.5 mb-space-md text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-outline">storefront</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Grupo Walmart México</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-base text-outline shrink-0 mt-0.5">location_on</span>
+<span class="font-body-sm text-body-sm line-clamp-1">Canal de San Juan #1156, Iztapalapa, CDMX</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm p-space-sm bg-surface-container-low rounded-lg mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Monto Facturado</span>
+<span class="font-title-md text-title-md font-tabular-code text-primary font-bold">$125,000 MXN</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Acta de Entrega</span>
+<span class="font-title-md text-title-md font-tabular-code text-on-surface">14 Oct 2024</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium block">Sello UVIE Aprobado</span>
+</div>
+</div>
+<div class="mb-space-md">
+<div class="flex items-center justify-between text-body-sm mb-1.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Entrega • Garantía 12 meses</span>
+<span class="font-tabular-code font-bold text-on-tertiary-container text-body-md">100%</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-on-tertiary-container rounded-full" style="width: 100%;"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm text-on-surface-variant mt-1 font-tabular-code">
+<span>Dossier de Calidad emitido</span>
+<span>Cerrada formalmente</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs mb-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Cuadrilla:</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Desmovilizada</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span> Dictamen #UVIE-491
+            </span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-sm">
+<button class="btn-abrir-expediente flex-1 py-2 px-space-md bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded-lg flex items-center justify-center gap-space-xs transition-colors" data-obra="OB-2024-004">
+<span class="material-symbols-outlined text-base">folder_open</span>
+<span>Ver Expediente Completo</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors">
+<span class="material-symbols-outlined text-xl">print</span>
+</button>
+</div>
+</div>
+<!-- TARJETA 5: Subestación Principal Parque Industrial Querétaro -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col justify-between transition-all hover:shadow-xl relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-secondary"></div>
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex flex-col">
+<span class="font-tabular-code text-body-sm font-bold text-secondary uppercase tracking-wider">OB-2024-015</span>
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-secondary transition-colors">Subestación Principal Parque Querétaro</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-label-sm text-label-sm font-bold bg-secondary-fixed text-on-secondary-fixed shrink-0">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              En Proceso
+            </span>
+</div>
+<div class="space-y-1.5 mb-space-md text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-outline">factory</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Logística Bajío S.A.P.I.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-base text-outline shrink-0 mt-0.5">location_on</span>
+<span class="font-body-sm text-body-sm line-clamp-1">Carretera Qro-SLP Km 28.5, Santa Rosa Jáuregui, Qro</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm p-space-sm bg-surface-container-low rounded-lg mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Presupuesto</span>
+<span class="font-title-md text-title-md font-tabular-code text-primary font-bold">$1,240,000 MXN</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Plazo de Entrega</span>
+<span class="font-title-md text-title-md font-tabular-code text-on-surface">30 Nov 2024</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium block">Montaje de celdas MT</span>
+</div>
+</div>
+<div class="mb-space-md">
+<div class="flex items-center justify-between text-body-sm mb-1.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Fase 2: Transformador 1000kVA</span>
+<span class="font-tabular-code font-bold text-secondary text-body-md">45%</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 45%;"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm text-on-surface-variant mt-1 font-tabular-code">
+<span>Maniobra grúa programada</span>
+<span>26 días restantes</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs mb-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Cuadrilla:</span>
+<div class="flex -space-x-2 overflow-hidden">
+<div class="h-7 w-7 rounded-full bg-primary text-on-primary text-label-sm font-bold flex items-center justify-center ring-2 ring-surface-container-lowest font-tabular-code">
+                  DR
+                </div>
+<div class="h-7 w-7 rounded-full bg-secondary text-on-secondary text-label-sm font-bold flex items-center justify-center ring-2 ring-surface-container-lowest font-tabular-code">
+                  FG
+                </div>
+<div class="h-7 w-7 rounded-full bg-surface-container-highest text-on-surface text-label-sm font-bold flex items-center justify-center ring-2 ring-surface-container-lowest font-tabular-code">
+                  +4
+                </div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-tabular-code">NP300 #04 + Grúa</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-sm">
+<button class="btn-abrir-expediente flex-1 py-2 px-space-md bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded-lg flex items-center justify-center gap-space-xs transition-colors" data-obra="OB-2024-015">
+<span class="material-symbols-outlined text-base">folder_open</span>
+<span>Ver Expediente Completo</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+</div>
+</div>
+<!-- TARJETA 6: Reubicación de Acometida CFE Industrial -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col justify-between transition-all hover:shadow-xl relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-outline-variant"></div>
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex flex-col">
+<span class="font-tabular-code text-body-sm font-bold text-outline uppercase tracking-wider">OB-2024-021</span>
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-secondary transition-colors">Reubicación de Acometida y Murete CFE</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-label-sm text-label-sm font-bold bg-surface-container-highest text-on-surface-variant shrink-0">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+              Cotizada
+            </span>
+</div>
+<div class="space-y-1.5 mb-space-md text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-outline">corporate_fare</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Manufacturas Valle de México</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-base text-outline shrink-0 mt-0.5">location_on</span>
+<span class="font-body-sm text-body-sm line-clamp-1">Calle Poniente 140, Industrial Vallejo, Azcapotzalco, CDMX</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm p-space-sm bg-surface-container-low rounded-lg mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Presupuesto</span>
+<span class="font-title-md text-title-md font-tabular-code text-primary font-bold">$88,500 MXN</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Vigencia Cotización</span>
+<span class="font-title-md text-title-md font-tabular-code text-on-surface">05 Nov 2024</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium block">Aprobación CFE en trámite</span>
+</div>
+</div>
+<div class="mb-space-md">
+<div class="flex items-center justify-between text-body-sm mb-1.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Fase Preliminar</span>
+<span class="font-tabular-code font-bold text-on-surface-variant text-body-md">10%</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-outline rounded-full" style="width: 10%;"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm text-on-surface-variant mt-1 font-tabular-code">
+<span>Validación de Libranza</span>
+<span>Pendiente fecha CFE</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs mb-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Técnico Gestor:</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Ing. Carlos Linares</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-tabular-code">Gestoría</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-sm">
+<button class="btn-abrir-expediente flex-1 py-2 px-space-md bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded-lg flex items-center justify-center gap-space-xs transition-colors" data-obra="OB-2024-021">
+<span class="material-symbols-outlined text-base">folder_open</span>
+<span>Ver Expediente Completo</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- CONTENIDO: VISTA TABLA (Oculta por defecto, alternable) -->
+<section class="p-space-xl pt-0 hidden" id="contenedor-tabla">
+<div class="bg-surface-container-lowest rounded-xl shadow-md overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3.5 px-4 font-semibold">Código</th>
+<th class="py-3.5 px-4 font-semibold">Proyecto • Nombre</th>
+<th class="py-3.5 px-4 font-semibold">Cliente</th>
+<th class="py-3.5 px-4 font-semibold">Estado</th>
+<th class="py-3.5 px-4 font-semibold">Avance</th>
+<th class="py-3.5 px-4 font-semibold">Presupuesto</th>
+<th class="py-3.5 px-4 font-semibold">Fecha Entrega</th>
+<th class="py-3.5 px-4 font-semibold text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-body-md text-on-surface font-body-md">
+<tr class="hover:bg-surface-container-low/70 transition-colors">
+<td class="py-3.5 px-4 font-tabular-code font-bold text-secondary">OB-2024-012</td>
+<td class="py-3.5 px-4 font-semibold">Fuerza y Alumbrado Plaza Galerías</td>
+<td class="py-3.5 px-4 text-on-surface-variant">Desarrollos Comerciales del Valle</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-secondary-fixed text-on-secondary-fixed">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> En Proceso
+              </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<div class="w-24 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 72%;"></div>
+</div>
+<span class="font-tabular-code font-bold text-secondary text-body-sm">72%</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-tabular-code font-bold text-primary">$485,000 MXN</td>
+<td class="py-3.5 px-4 font-tabular-code text-body-sm">15 Nov 2024</td>
+<td class="py-3.5 px-4 text-right">
+<button class="btn-abrir-expediente px-3 py-1 bg-primary text-on-primary rounded font-label-md text-label-md hover:bg-primary-container transition-colors" data-obra="OB-2024-012">
+                Expediente
+              </button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/70 transition-colors bg-surface-container-low/20">
+<td class="py-3.5 px-4 font-tabular-code font-bold text-secondary">OB-2024-008</td>
+<td class="py-3.5 px-4 font-semibold">Mantenimiento Transformador Cuautitlán</td>
+<td class="py-3.5 px-4 text-on-surface-variant">Naves Industriales del Bajío</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-secondary-fixed text-on-secondary-fixed">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> En Proceso
+              </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<div class="w-24 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 88%;"></div>
+</div>
+<span class="font-tabular-code font-bold text-secondary text-body-sm">88%</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-tabular-code font-bold text-primary">$340,000 MXN</td>
+<td class="py-3.5 px-4 font-tabular-code text-body-sm">28 Oct 2024</td>
+<td class="py-3.5 px-4 text-right">
+<button class="btn-abrir-expediente px-3 py-1 bg-surface-container text-on-surface rounded font-label-md text-label-md hover:bg-surface-container-high transition-colors" data-obra="OB-2024-008">
+                Expediente
+              </button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/70 transition-colors">
+<td class="py-3.5 px-4 font-tabular-code font-bold text-outline">OB-2024-019</td>
+<td class="py-3.5 px-4 font-semibold">Adecuación Eléctrica Corporativo Insurgentes</td>
+<td class="py-3.5 px-4 text-on-surface-variant">Inmobiliaria Corporativa Reforma</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-surface-container-highest text-on-surface-variant">
+                Cotizada
+              </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<div class="w-24 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-outline rounded-full" style="width: 15%;"></div>
+</div>
+<span class="font-tabular-code text-on-surface-variant text-body-sm">15%</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-tabular-code font-bold text-primary">$190,000 MXN</td>
+<td class="py-3.5 px-4 font-tabular-code text-body-sm">10 Nov 2024</td>
+<td class="py-3.5 px-4 text-right">
+<button class="btn-abrir-expediente px-3 py-1 bg-surface-container text-on-surface rounded font-label-md text-label-md hover:bg-surface-container-high transition-colors" data-obra="OB-2024-019">
+                Expediente
+              </button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/70 transition-colors bg-surface-container-low/20">
+<td class="py-3.5 px-4 font-tabular-code font-bold text-on-tertiary-container">OB-2024-004</td>
+<td class="py-3.5 px-4 font-semibold">Alumbrado LED Estacionamiento Oriente</td>
+<td class="py-3.5 px-4 text-on-surface-variant">Grupo Walmart México</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-tertiary-fixed text-on-tertiary-fixed">
+                Terminada
+              </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<div class="w-24 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-on-tertiary-container rounded-full" style="width: 100%;"></div>
+</div>
+<span class="font-tabular-code font-bold text-on-tertiary-container text-body-sm">100%</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-tabular-code font-bold text-primary">$125,000 MXN</td>
+<td class="py-3.5 px-4 font-tabular-code text-body-sm">14 Oct 2024</td>
+<td class="py-3.5 px-4 text-right">
+<button class="btn-abrir-expediente px-3 py-1 bg-surface-container text-on-surface rounded font-label-md text-label-md hover:bg-surface-container-high transition-colors" data-obra="OB-2024-004">
+                Expediente
+              </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- MODAL: REGISTRAR NUEVA OBRA (Flotante) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/60 backdrop-blur-sm hidden" id="modal-nueva-obra">
+<div class="bg-surface-container-lowest rounded-2xl shadow-2xl max-w-2xl w-full max-h-[921px] overflow-y-auto">
+<div class="p-space-lg border-b border-outline-variant/30 flex items-center justify-between sticky top-0 bg-surface-container-lowest z-10">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">add_business</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface leading-tight">Alta de Nueva Obra / Proyecto</h2>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Registro en Sistema SCOSIE Eléctrico MX</span>
+</div>
+</div>
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg" id="btn-cerrar-modal-obra">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<form class="p-space-lg space-y-space-md" id="form-crear-obra">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1">Código de Obra (Autogenerado)</label>
+<input class="w-full px-3 py-2 bg-surface-container-low font-tabular-code text-body-md text-primary font-bold rounded-lg border-none focus:outline-none" readonly="" type="text" value="OB-2024-022"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1">Tipo de Proyecto</label>
+<select class="w-full px-3 py-2 bg-surface-container rounded-lg text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-secondary/40">
+<option>Baja Tensión Comercial</option>
+<option>Media Tensión / Subestaciones</option>
+<option>Mantenimiento Industrial Preventivo</option>
+<option>Instalación Fotovoltaica C&amp;I</option>
+<option>Dictamen UVIE / CFE</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1">Nombre Descriptivo de la Obra *</label>
+<input class="w-full px-3 py-2 bg-surface-container-low rounded-lg text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-secondary/40" placeholder="Ej: Modernización de Centro de Carga y Alimentadores Nave 4" required="" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1">Cliente / Razón Social *</label>
+<select class="w-full px-3 py-2 bg-surface-container-low rounded-lg text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-secondary/40">
+<option>Grupo Walmart México</option>
+<option>Desarrollos Comerciales del Valle S.A.</option>
+<option>Inmobiliaria Corporativa Reforma</option>
+<option>Naves Industriales del Bajío</option>
+<option>+ Registrar Nuevo Cliente...</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1">Presupuesto Aprobado (MXN)</label>
+<div class="relative">
+<span class="absolute left-3 top-2 font-tabular-code text-on-surface-variant font-bold">$</span>
+<input class="w-full pl-8 pr-12 py-2 bg-surface-container-low rounded-lg font-tabular-code text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/40" placeholder="350000" type="number"/>
+<span class="absolute right-3 top-2 font-label-sm text-label-sm text-on-surface-variant">MXN</span>
+</div>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1">Dirección de la Instalación</label>
+<input class="w-full px-3 py-2 bg-surface-container-low rounded-lg text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-secondary/40" placeholder="Calle, número, colonia, municipio y C.P." type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1">Fecha de Inicio Programada</label>
+<input class="w-full px-3 py-2 bg-surface-container-low rounded-lg text-body-md font-tabular-code focus:outline-none" type="date" value="2024-11-01"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1">Fecha Compromiso de Entrega</label>
+<input class="w-full px-3 py-2 bg-surface-container-low rounded-lg text-body-md font-tabular-code focus:outline-none" type="date" value="2024-12-15"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1">Supervisor Responsable</label>
+<select class="w-full px-3 py-2 bg-surface-container-low rounded-lg text-body-md font-body-md focus:outline-none">
+<option>Ing. David Reséndiz (Técnico Titular)</option>
+<option>Ing. Carlos Linares (Subestaciones)</option>
+<option>Ing. Marco Tulio Morales (Media Tensión)</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1">Vehículo Asignado Inicial</label>
+<select class="w-full px-3 py-2 bg-surface-container-low rounded-lg text-body-md font-body-md focus:outline-none">
+<option>Nissan NP300 Estacas (#02) - Placas LE-84-112</option>
+<option>Nissan NP300 Chasis (#04) - Placas HP-39-019</option>
+<option>Ford Transit Van Herramientas (#05)</option>
+<option>Sin Asignar (Pendiente)</option>
+</select>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-end gap-space-sm border-t border-outline-variant/30">
+<button class="px-space-md py-2 bg-surface-container text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-container-high transition-colors" id="btn-cancelar-modal" type="button">
+            Cancelar
+          </button>
+<button class="px-space-lg py-2 bg-primary text-on-primary font-label-md text-label-md rounded-lg hover:bg-primary-container transition-colors shadow-md" type="submit">
+            Registrar y Abrir Bitácora
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- PANEL LATERAL EXPANDIDO INTERACTIVO: EXPEDIENTE DETALLADO DE OBRA (Drawer) -->
+<div class="fixed inset-y-0 right-0 z-50 w-full max-w-3xl bg-surface-container-lowest shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out" id="drawer-expediente">
+<!-- Header Drawer -->
+<div class="p-space-lg bg-primary text-on-primary flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm mb-1">
+<span class="font-tabular-code text-body-sm font-bold bg-primary-container px-2 py-0.5 rounded text-primary-fixed">OB-2024-012</span>
+<span class="bg-secondary text-on-secondary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold">En Proceso (72%)</span>
+<span class="text-primary-fixed-dim font-label-sm text-label-sm">Expediente Oficial SCOSIE</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-primary leading-tight">Instalación de Fuerza y Alumbrado Plaza Galerías</h2>
+<span class="text-primary-fixed-dim font-body-sm text-body-sm mt-0.5">Desarrollos Comerciales del Valle S.A. de C.V. • Naucalpan, Edo. Mex</span>
+</div>
+<button class="p-2 text-primary-fixed hover:text-on-primary hover:bg-primary-container rounded-lg transition-colors" id="btn-cerrar-drawer">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<!-- Pestañas de Navegación del Expediente -->
+<div class="bg-surface-container-low px-space-md overflow-x-auto flex items-center gap-1 border-b border-outline-variant/30 shrink-0">
+<button class="tab-btn active px-3.5 py-3 font-label-md text-label-md border-b-2 border-secondary text-secondary font-bold whitespace-nowrap flex items-center gap-1.5" data-tab="tab-gral">
+<span class="material-symbols-outlined text-base">info</span>
+<span>1. General</span>
+</button>
+<button class="tab-btn px-3.5 py-3 font-label-md text-label-md text-on-surface-variant hover:text-on-surface whitespace-nowrap flex items-center gap-1.5 transition-colors" data-tab="tab-personal">
+<span class="material-symbols-outlined text-base">group</span>
+<span>2. Personal (5)</span>
+</button>
+<button class="tab-btn px-3.5 py-3 font-label-md text-label-md text-on-surface-variant hover:text-on-surface whitespace-nowrap flex items-center gap-1.5 transition-colors" data-tab="tab-bitacoras">
+<span class="material-symbols-outlined text-base">photo_library</span>
+<span>3. Bitácoras (14)</span>
+</button>
+<button class="tab-btn px-3.5 py-3 font-label-md text-label-md text-on-surface-variant hover:text-on-surface whitespace-nowrap flex items-center gap-1.5 transition-colors" data-tab="tab-herramientas">
+<span class="material-symbols-outlined text-base">construction</span>
+<span>4. Herramientas (8)</span>
+</button>
+<button class="tab-btn px-3.5 py-3 font-label-md text-label-md text-on-surface-variant hover:text-on-surface whitespace-nowrap flex items-center gap-1.5 transition-colors" data-tab="tab-materiales">
+<span class="material-symbols-outlined text-base">inventory_2</span>
+<span>5. Materiales</span>
+</button>
+<button class="tab-btn px-3.5 py-3 font-label-md text-label-md text-on-surface-variant hover:text-on-surface whitespace-nowrap flex items-center gap-1.5 transition-colors" data-tab="tab-vehiculo">
+<span class="material-symbols-outlined text-base">local_shipping</span>
+<span>6. Vehículo</span>
+</button>
+<button class="tab-btn px-3.5 py-3 font-label-md text-label-md text-on-surface-variant hover:text-on-surface whitespace-nowrap flex items-center gap-1.5 transition-colors" data-tab="tab-auditoria">
+<span class="material-symbols-outlined text-base">history</span>
+<span>7. Auditoría</span>
+</button>
+</div>
+<!-- Contenido de las Pestañas -->
+<div class="flex-1 overflow-y-auto p-space-lg space-y-space-lg">
+<!-- PESTAÑA 1: INFORMACIÓN GENERAL -->
+<div class="tab-content space-y-space-lg" id="tab-gral">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-md bg-surface-container-low rounded-xl">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase tracking-wider">Monto Total Contrato</span>
+<span class="font-headline-md text-headline-md font-tabular-code text-primary font-bold">$485,000 MXN</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium block">Anticipo 50% amortizado</span>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-xl">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase tracking-wider">Vigencia Oficial</span>
+<span class="font-headline-md text-headline-md font-tabular-code text-on-surface">45 Días Nat.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block font-tabular-code">02 Oct → 15 Nov 2024</span>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-xl">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase tracking-wider">Supervisor Titular</span>
+<span class="font-title-lg text-title-lg text-on-surface font-semibold">Ing. David Reséndiz</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Céd. Profesional #8942188</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-space-sm">
+<h4 class="font-title-md text-title-md text-on-surface font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">description</span>
+            Alcance Técnico del Proyecto (NOM-001-SEDE-2012)
+          </h4>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Suministro, canalización y cableado para distribución general de fuerza 220/127V 3F-4H. Incluye instalación de 1 Tablero General I-Line de 400A, 3 subtableros NQOD tipo alumbrado, tendido de 850m de cable THHN calibre 2 AWG vía charola portacable tipo escalera, y conexión al transformador seco de 500kVA del centro comercial.
+          </p>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<h4 class="font-title-md text-title-md text-on-surface font-semibold mb-space-sm flex items-center justify-between">
+<span>Expediente Documental y Licencias</span>
+<button class="font-label-sm text-label-sm text-secondary font-bold flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-sm">upload_file</span> Subir Anexo
+            </button>
+</h4>
+<div class="space-y-2">
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-2xl">picture_as_pdf</span>
+<div>
+<span class="font-title-md text-title-md font-semibold text-on-surface block">Memoria_Tecnica_Galerias_Rev2.pdf</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-tabular-code">14.2 MB • Aprobado por UVIE</span>
+</div>
+</div>
+<button class="p-2 text-on-surface-variant hover:text-secondary"><span class="material-symbols-outlined">download</span></button>
+</div>
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-2xl">schema</span>
+<div>
+<span class="font-title-md text-title-md font-semibold text-on-surface block">Diagrama_Unifilar_AsBuilt_v1.dwg</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-tabular-code">28.4 MB • Actualizado 22 Oct 2024</span>
+</div>
+</div>
+<button class="p-2 text-on-surface-variant hover:text-secondary"><span class="material-symbols-outlined">download</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- PESTAÑA 2: PERSONAL ASIGNADO -->
+<div class="tab-content hidden space-y-space-md" id="tab-personal">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Cuadrilla Asignada en Sitio (5 Técnicos)</span>
+<button class="px-space-md py-1.5 bg-primary text-on-primary font-label-md text-label-md rounded-lg flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-base">person_add</span> Asignar Electricista
+          </button>
+</div>
+<div class="space-y-space-sm">
+<!-- Técnico 1 -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-lg font-tabular-code">
+                JL
+              </div>
+<div>
+<h5 class="font-title-md text-title-md text-on-surface font-semibold">José Luis Mendoza Ramos</h5>
+<span class="font-label-sm text-label-sm text-secondary font-bold block">Técnico Electricista Especialista (Cabo)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-tabular-code">DC-3 Alturas &amp; Riesgo Eléctrico Vigente</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Asistencias en Obra</span>
+<span class="font-title-md text-title-md font-tabular-code text-on-surface font-bold">18 / 18 Días</span>
+<span class="inline-block px-2 py-0.5 rounded-full text-label-sm bg-secondary-fixed text-on-secondary-fixed font-bold">En Sitio Ahora</span>
+</div>
+</div>
+<!-- Técnico 2 -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-lg font-tabular-code">
+                RR
+              </div>
+<div>
+<h5 class="font-title-md text-title-md text-on-surface font-semibold">Roberto Rocha Morales</h5>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold block">Oficial Electricista Tablerista</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-tabular-code">Asignado el 02 Oct 2024</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Asistencias en Obra</span>
+<span class="font-title-md text-title-md font-tabular-code text-on-surface font-bold">17 / 18 Días</span>
+<span class="inline-block px-2 py-0.5 rounded-full text-label-sm bg-secondary-fixed text-on-secondary-fixed font-bold">En Sitio Ahora</span>
+</div>
+</div>
+<!-- Técnico 3 -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-bold text-lg font-tabular-code">
+                EH
+              </div>
+<div>
+<h5 class="font-title-md text-title-md text-on-surface font-semibold">Eduardo Hernández Soto</h5>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold block">Ayudante Especializado</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-tabular-code">Canalización y charola</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Asistencias en Obra</span>
+<span class="font-title-md text-title-md font-tabular-code text-on-surface font-bold">18 / 18 Días</span>
+<span class="inline-block px-2 py-0.5 rounded-full text-label-sm bg-secondary-fixed text-on-secondary-fixed font-bold">En Sitio Ahora</span>
+</div>
+</div>
+</div>
+</div>
+<!-- PESTAÑA 3: BITÁCORAS Y EVIDENCIAS FOTOGRÁFICAS -->
+<div class="tab-content hidden space-y-space-md" id="tab-bitacoras">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Reportes Fotográficos &amp; Diario de Obra</span>
+<button class="px-space-md py-1.5 bg-secondary text-on-secondary font-label-md text-label-md rounded-lg flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-base">add_a_photo</span> Nueva Entrada de Bitácora
+          </button>
+</div>
+<div class="space-y-space-md">
+<!-- Entrada Bitácora 1 -->
+<div class="p-space-md bg-surface-container-low rounded-xl space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-tabular-code font-bold text-secondary text-body-sm">BIT-014</span>
+<span class="font-title-md text-title-md font-semibold text-on-surface">Peinado de alimentadores en Tablero General TG-01</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-tabular-code">Hoy 11:30 hrs • Por: J.L. Mendoza</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Se concluyó el peinado de 12 conductores cal. 2 AWG THHN para los alimentadores principales. Se aplicó torque calibrado de 275 lb-in con torquímetro certificado a zapatas de interruptor general 400A.
+            </p>
+<div class="grid grid-cols-3 gap-space-sm pt-space-xs">
+<div class="aspect-video rounded-lg overflow-hidden bg-surface-container relative group">
+<img class="w-full h-full object-cover" data-alt="Fotografía de evidencia industrial mostrando peinado prolijo de conductores eléctricos de cobre calibre 2 dentro de un tablero Schneider TG-01 en obra Naucalpan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7xlXp4pASLzO3PEVK-Ab-Sf4adAE4HSib9FGpN_irb7am98ST4OGO6iC3WBOipah_RemvrMMCQRBytPB5RvpBmM2ZVBfnridqxRWtCScejm8vUprM3825VqXkqB7z5O7hSm7x7s43cE5Gsx3EuUzr9XX3WDKNZb1Wr2C4HiRZSvLF7GkbViBe6RWoEubqBWduf5_9yJgi3e7mWr0uWfqZgDrlcU0m2b50N-SIIa4"/>
+<span class="absolute bottom-1 left-1 bg-inverse-surface/80 text-inverse-on-surface text-label-sm px-1.5 py-0.5 rounded font-tabular-code">TG-01 Interior</span>
+</div>
+<div class="aspect-video rounded-lg overflow-hidden bg-surface-container relative group">
+<img class="w-full h-full object-cover" data-alt="Detalle de torquímetro calibrado ajustando tornillería en zapatas de interruptor electromagnético en obra de baja tensión" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4a4ryBXM6_JBBLQdyaj1bY3M_vlLTtm-vr3aze7i0C2jcawkbbbV-nJdZwoy8rdMUSvohdwrGxix9_wcZfr2TwEJsNGaVIOJGGUmIIg7UaNKtY5KNmcgkunnyh1C0yQqEbsIOH-X4_LKx89sFBmpDucUssNAJidNmmu4sRD5DgNC9QebIt3H5a8sTnkWHF3x76mHBluieukeLSWSQ5rkXoPIjXyvvEd9jw1KEUKY"/>
+<span class="absolute bottom-1 left-1 bg-inverse-surface/80 text-inverse-on-surface text-label-sm px-1.5 py-0.5 rounded font-tabular-code">Torque 275 lb-in</span>
+</div>
+<div class="aspect-video rounded-lg overflow-hidden bg-surface-container relative group">
+<img class="w-full h-full object-cover" data-alt="Etiquetado y termoencogible con código de colores según NOM-001 de fases eléctrica Fase A negra, B roja, C azul" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCenhABTX4-S6JRqLaZpmza-iqBh_o9mc7Nt8BT5FroDwrbanIc8KImADp9rOf-yMhBSWQ0SJFsQ-RgWvzJknS9MDWCz_4PY0ErcQfljGHZSIfIP2O_dRpqn0Vl6YNHgnmlxgx2sEMJZE68dyMCB3bmDS7hh0NlDrjqmMABh-ZrWblV_bcYiBRyXNpeaJP3sinEy4xf7XctcHhLFtzraRqubl1XkS4WOl-7qvHy93s"/>
+<span class="absolute bottom-1 left-1 bg-inverse-surface/80 text-inverse-on-surface text-label-sm px-1.5 py-0.5 rounded font-tabular-code">Faseado NOM</span>
+</div>
+</div>
+</div>
+<!-- Entrada Bitácora 2 -->
+<div class="p-space-md bg-surface-container-low rounded-xl space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-tabular-code font-bold text-secondary text-body-sm">BIT-013</span>
+<span class="font-title-md text-title-md font-semibold text-on-surface">Tendido de charola portacable tipo escalera tramo 3</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-tabular-code">Ayer 16:45 hrs • Por: R. Rocha</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Instalación de 48 metros de charola de aluminio de 12 pulgadas a 4.5 metros de altura con soportería unicanal fijada a estructura metálica.
+            </p>
+</div>
+</div>
+</div>
+<!-- PESTAÑA 4: HERRAMIENTAS ASIGNADAS EN SITIO -->
+<div class="tab-content hidden space-y-space-md" id="tab-herramientas">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Equipos y Herramienta en Resguardo (8 Activos)</span>
+<button class="px-space-md py-1.5 bg-primary text-on-primary font-label-md text-label-md rounded-lg flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-base">checklist</span> Vale de Salida Almacén
+          </button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase">
+<th class="py-2.5 px-4">Código Activo</th>
+<th class="py-2.5 px-4">Equipo / Marca</th>
+<th class="py-2.5 px-4">Calibración / Estado</th>
+<th class="py-2.5 px-4">Responsable</th>
+<th class="py-2.5 px-4 text-right">Estatus</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 font-body-md text-body-md">
+<tr class="hover:bg-surface-container-low/50">
+<td class="py-3 px-4 font-tabular-code font-bold text-secondary">HER-042</td>
+<td class="py-3 px-4 font-semibold">Ponchadora Hidráulica 16-400mm² Burndy</td>
+<td class="py-3 px-4 font-label-sm text-label-sm text-on-surface-variant">Operativa • Matriz Completa</td>
+<td class="py-3 px-4">J.L. Mendoza</td>
+<td class="py-3 px-4 text-right"><span class="px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed rounded text-label-sm font-bold">En Sitio</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 bg-surface-container-low/30">
+<td class="py-3 px-4 font-tabular-code font-bold text-secondary">HER-019</td>
+<td class="py-3 px-4 font-semibold">Multímetro de Gancho Fluke 376 FC True-RMS</td>
+<td class="py-3 px-4 font-label-sm text-label-sm text-secondary font-bold">Calibrado (Vig. Mar 2025)</td>
+<td class="py-3 px-4">Ing. D. Reséndiz</td>
+<td class="py-3 px-4 text-right"><span class="px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed rounded text-label-sm font-bold">En Sitio</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low/50">
+<td class="py-3 px-4 font-tabular-code font-bold text-secondary">HER-088</td>
+<td class="py-3 px-4 font-semibold">Rotomartillo SDS-Plus Milwaukee M18 Fuel</td>
+<td class="py-3 px-4 font-label-sm text-label-sm text-on-surface-variant">2 Baterías 5.0Ah + Cargador</td>
+<td class="py-3 px-4">E. Hernández</td>
+<td class="py-3 px-4 text-right"><span class="px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed rounded text-label-sm font-bold">En Sitio</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 bg-surface-container-low/30">
+<td class="py-3 px-4 font-tabular-code font-bold text-secondary">HER-105</td>
+<td class="py-3 px-4 font-semibold">Torquímetro de Trueno 50-250 ft-lb CDI</td>
+<td class="py-3 px-4 font-label-sm text-label-sm text-secondary font-bold">Certificado EMA Vigente</td>
+<td class="py-3 px-4">R. Rocha</td>
+<td class="py-3 px-4 text-right"><span class="px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed rounded text-label-sm font-bold">En Sitio</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- PESTAÑA 5: MATERIALES SUMINISTRADOS -->
+<div class="tab-content hidden space-y-space-md" id="tab-materiales">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Consumo vs Presupuesto en Obra</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Monitoreo de desvíos de catálogo y mermas en campo</p>
+</div>
+<button class="px-space-md py-1.5 bg-secondary text-on-secondary font-label-md text-label-md rounded-lg flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-base">post_add</span> Solicitar Suministro
+          </button>
+</div>
+<div class="space-y-space-sm">
+<div class="p-space-md bg-surface-container-low rounded-xl">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-md text-title-md font-semibold text-on-surface">Cable Cobre THHN 2 AWG Condumex</span>
+<span class="font-tabular-code font-bold text-primary">620 m de 850 m (73%)</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 73%;"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm text-on-surface-variant mt-1.5 font-tabular-code">
+<span>Restan 230 m en almacén de obra</span>
+<span class="text-secondary font-semibold">Sin desviación</span>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-xl">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-md text-title-md font-semibold text-on-surface">Charola Aluminio 12" x 4" Cross Line</span>
+<span class="font-tabular-code font-bold text-primary">48 m de 52 m (92%)</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 92%;"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm text-on-surface-variant mt-1.5 font-tabular-code">
+<span>Instalación casi completa</span>
+<span class="text-secondary font-semibold">Merma esperada 2.1%</span>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-xl">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-md text-title-md font-semibold text-on-surface">Tablero I-Line Schneider Electric 400A</span>
+<span class="font-tabular-code font-bold text-on-tertiary-container">1 de 1 Unidad (100%)</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-on-tertiary-container rounded-full" style="width: 100%;"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm text-on-surface-variant mt-1.5 font-tabular-code">
+<span>Montado y anclado sobre zoclo</span>
+<span class="text-on-tertiary-container font-semibold">Completado</span>
+</div>
+</div>
+</div>
+</div>
+<!-- PESTAÑA 6: VEHÍCULO ASIGNADO -->
+<div class="tab-content hidden space-y-space-md" id="tab-vehiculo">
+<div class="p-space-lg bg-surface-container-low rounded-2xl flex flex-col md:flex-row gap-space-lg items-center">
+<div class="w-full md:w-1/2 aspect-video bg-surface-container rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Camioneta utilitaria pickup blanca Nissan NP300 con logotipos SCOSIE con caja de herramientas y escaleras dieléctricas montadas en rack en obra" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhVhw7OOJJJpOtHgarYnZn7LZoMZAln6_WYYSAQpSPoC7eg_9-6a2Xx7DNDl6gFFUZ7wmQW45NmNukPmOWPTNmxWBx7Tm1PpHvu5XImoAEMt3ZgS4KiRmPGq_kd4_lkKvcqnqn108IK8QHVupmidYONvo8Rf9cQnyYyEid5J8bRyNT_NwxxzP56eLj_xcN0ZmnGg5U2MLYTL71uJCPgsCoiTTNdLcbmj0zbM_Pns8"/>
+<span class="absolute top-2 left-2 bg-primary text-on-primary font-tabular-code text-label-sm px-2 py-0.5 rounded font-bold">Unidad #02</span>
+</div>
+<div class="w-full md:w-1/2 space-y-space-sm">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-bold">Flotilla de Apoyo en Sitio</span>
+<h3 class="font-headline-md text-headline-md text-on-surface leading-tight">Nissan NP300 Chasis Doble Cabina 2022</h3>
+<div class="grid grid-cols-2 gap-space-xs font-tabular-code text-body-sm text-on-surface-variant pt-2">
+<div><span class="font-semibold text-on-surface">Placas:</span> LE-84-112 (Edomex)</div>
+<div><span class="font-semibold text-on-surface">Odómetro:</span> 48,920 km</div>
+<div><span class="font-semibold text-on-surface">Póliza Seguro:</span> Qualitas Vig. 2025</div>
+<div><span class="font-semibold text-on-surface">Combustible:</span> 3/4 Tanque</div>
+</div>
+<div class="p-space-sm bg-surface-container-lowest rounded-lg text-body-sm flex items-center justify-between">
+<div>
+<span class="font-semibold text-on-surface block">Conductor Designado</span>
+<span class="text-on-surface-variant font-label-md">José Luis Mendoza Ramos</span>
+</div>
+<button class="px-3 py-1 bg-surface-container text-on-surface rounded font-label-md text-label-md hover:bg-surface-container-high">
+                Registrar Carga Gasolina
+              </button>
+</div>
+</div>
+</div>
+</div>
+<!-- PESTAÑA 7: HISTORIAL Y AUDITORÍA -->
+<div class="tab-content hidden space-y-space-md" id="tab-auditoria">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Trazabilidad y Bitácora de Auditoría del Sistema</span>
+<div class="space-y-space-sm pl-4 border-l-2 border-primary-container">
+<div class="relative pl-4 pb-4">
+<span class="w-3 h-3 rounded-full bg-secondary absolute -left-[23px] top-1"></span>
+<span class="font-tabular-code text-label-sm text-on-surface-variant block">24 Oct 2024 • 11:32 hrs</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Avance volumétrico actualizado al 72%</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ing. David Reséndiz aprobó la Fase 2 y validó el torque del interruptor principal TG-01.</p>
+</div>
+<div class="relative pl-4 pb-4">
+<span class="w-3 h-3 rounded-full bg-outline-variant absolute -left-[23px] top-1"></span>
+<span class="font-tabular-code text-label-sm text-on-surface-variant block">21 Oct 2024 • 09:15 hrs</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Recepción de material de cobre en sitio</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ingreso de 5 carretes de cable cal. 2 THHN con remisión de almacén #REM-889.</p>
+</div>
+<div class="relative pl-4 pb-4">
+<span class="w-3 h-3 rounded-full bg-primary absolute -left-[23px] top-1"></span>
+<span class="font-tabular-code text-label-sm text-on-surface-variant block">02 Oct 2024 • 08:00 hrs</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Arranque oficial de obra y firma de contrato</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Firma de contrato de obra a precio alzado con Desarrollos Comerciales del Valle S.A.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Drawer -->
+<div class="p-space-md bg-surface-container-low border-t border-outline-variant/30 flex items-center justify-between shrink-0">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm font-tabular-code">
+<span class="material-symbols-outlined text-sm text-secondary">verified_user</span>
+<span>NOM-001-SEDE-2012 Art. 210 y 215</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2 bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded-lg flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-base">print</span>
+<span>Imprimir Ficha Técnica</span>
+</button>
+<button class="px-space-lg py-2 bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md rounded-lg transition-colors" id="btn-cerrar-drawer-bottom">
+          Aceptar y Cerrar
+        </button>
+</div>
+</div>
+</div>
+<!-- SCRIPT DE INTERACTIVIDAD CLIENTE -->
+<script>
+    (function initScosieObras() {
+      // Toggle Vista Grid / Tabla
+      const btnGrid = document.getElementById('view-toggle-grid');
+      const btnTable = document.getElementById('view-toggle-table');
+      const contGrid = document.getElementById('contenedor-tarjetas');
+      const contTable = document.getElementById('contenedor-tabla');
+
+      if (btnGrid && btnTable && contGrid && contTable) {
+        btnGrid.addEventListener('click', () => {
+          btnGrid.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+          btnGrid.classList.remove('text-on-surface-variant');
+          btnTable.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+          btnTable.classList.add('text-on-surface-variant');
+          contGrid.classList.remove('hidden');
+          contTable.classList.add('hidden');
+        });
+
+        btnTable.addEventListener('click', () => {
+          btnTable.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+          btnTable.classList.remove('text-on-surface-variant');
+          btnGrid.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+          btnGrid.classList.add('text-on-surface-variant');
+          contTable.classList.remove('hidden');
+          contGrid.classList.add('hidden');
+        });
+      }
+
+      // Drawer Expediente
+      const drawer = document.getElementById('drawer-expediente');
+      const btnsAbrir = document.querySelectorAll('.btn-abrir-expediente');
+      const btnCerrar = document.getElementById('btn-cerrar-drawer');
+      const btnCerrarBottom = document.getElementById('btn-cerrar-drawer-bottom');
+
+      function openDrawer() {
+        if (drawer) {
+          drawer.classList.remove('translate-x-full');
+          drawer.classList.add('translate-x-0');
+        }
+      }
+
+      function closeDrawer() {
+        if (drawer) {
+          drawer.classList.add('translate-x-full');
+          drawer.classList.remove('translate-x-0');
+        }
+      }
+
+      btnsAbrir.forEach(btn => btn.addEventListener('click', openDrawer));
+      if (btnCerrar) btnCerrar.addEventListener('click', closeDrawer);
+      if (btnCerrarBottom) btnCerrarBottom.addEventListener('click', closeDrawer);
+
+      // Pestañas dentro del Drawer
+      const tabs = document.querySelectorAll('.tab-btn');
+      const contents = document.querySelectorAll('.tab-content');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const targetId = tab.getAttribute('data-tab');
+          tabs.forEach(t => {
+            t.classList.remove('border-b-2', 'border-secondary', 'text-secondary', 'font-bold');
+            t.classList.add('text-on-surface-variant');
+          });
+          tab.classList.add('border-b-2', 'border-secondary', 'text-secondary', 'font-bold');
+          tab.classList.remove('text-on-surface-variant');
+
+          contents.forEach(content => {
+            if (content.id === targetId) {
+              content.classList.remove('hidden');
+            } else {
+              content.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // Modal Nueva Obra
+      const modalObra = document.getElementById('modal-nueva-obra');
+      const btnNuevaObra = document.getElementById('btn-nueva-obra');
+      const btnCerrarModal = document.getElementById('btn-cerrar-modal-obra');
+      const btnCancelarModal = document.getElementById('btn-cancelar-modal');
+      const formCrear = document.getElementById('form-crear-obra');
+
+      function openModal() {
+        if (modalObra) modalObra.classList.remove('hidden');
+      }
+
+      function closeModal() {
+        if (modalObra) modalObra.classList.add('hidden');
+      }
+
+      if (btnNuevaObra) btnNuevaObra.addEventListener('click', openModal);
+      if (btnCerrarModal) btnCerrarModal.addEventListener('click', closeModal);
+      if (btnCancelarModal) btnCancelarModal.addEventListener('click', closeModal);
+
+      if (formCrear) {
+        formCrear.addEventListener('submit', (e) => {
+          e.preventDefault();
+          closeModal();
+          openDrawer(); // Demuestra transición al expediente creado
+        });
+      }
+
+      // Buscador simple en tiempo real
+      const inputBuscar = document.getElementById('input-buscar-obra');
+      if (inputBuscar) {
+        inputBuscar.addEventListener('input', (e) => {
+          const val = e.target.value.toLowerCase();
+          const tarjetas = document.querySelectorAll('#contenedor-tarjetas > div > div');
+          tarjetas.forEach(card => {
+            const txt = card.innerText.toLowerCase();
+            card.style.display = txt.includes(val) ? 'flex' : 'none';
+          });
+        });
+      }
+    })();
+  </script>
+</div></main></div></body></html>
