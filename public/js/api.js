@@ -90,5 +90,143 @@ export async function misAsignaciones(idUsuario) {
 
 /* =====================================================================
  * Secciones SIN endpoint (datos de mock.js)
- * Se irán agregando por etapa.
  * ===================================================================== */
+
+/** Resumen de bitácoras del día (Panel General). */
+export function resumenBitacorasHoy() {
+  // TODO(endpoint): GET /api/bitacoras/resumen-hoy
+  //   SELECT COUNT(*) AS registradas, SUM(sincronizado_notion) AS sincronizadas_notion
+  //   FROM BITACORAS WHERE fecha = CURDATE();
+  return simulado(mock.resumenBitacorasHoy);
+}
+
+/** Registro de asistencia de hoy del usuario (Mi Asistencia). */
+export function miAsistenciaHoy(idUsuario) {
+  // TODO(endpoint): GET /api/asistencia/hoy?id_usuario=…
+  //   SELECT fecha, hora_entrada, hora_salida, ubicacion
+  //   FROM ASISTENCIA_DIARIA WHERE id_usuario = ? AND fecha = CURDATE();
+  void idUsuario;
+  return simulado(mock.miAsistenciaHoy);
+}
+
+/** Historial de asistencias del usuario (Mi Asistencia). */
+export function historialAsistencia(idUsuario) {
+  // TODO(endpoint): GET /api/asistencia/historial?id_usuario=…
+  //   SELECT ad.fecha, ad.hora_entrada, ad.hora_salida, ad.ubicacion, o.nombre AS obra
+  //   FROM ASISTENCIA_DIARIA ad
+  //   LEFT JOIN ASIGNACION_OBRAS ao ON ao.id_usuario = ad.id_usuario AND ao.fecha = ad.fecha
+  //   LEFT JOIN OBRAS o ON o.id_obra = ao.id_obra
+  //   WHERE ad.id_usuario = ? ORDER BY ad.fecha DESC LIMIT 30;
+  void idUsuario;
+  return simulado(mock.historialAsistencia);
+}
+
+/** Respuesta común para acciones que todavía no tienen endpoint. */
+const pendiente = () => Promise.resolve({
+  ok: false, data: null, pendiente: true, error: 'Funcionalidad pendiente de endpoint.',
+});
+
+/** Registrar entrada del día. */
+export function registrarEntrada(idUsuario, ubicacion) {
+  // TODO(endpoint): POST /api/asistencia/entrada  { id_usuario, ubicacion }
+  //   INSERT INTO ASISTENCIA_DIARIA (id_usuario, fecha, hora_entrada, ubicacion)
+  //   VALUES (?, CURDATE(), CURTIME(), ?);
+  void idUsuario; void ubicacion;
+  return pendiente();
+}
+
+/** Registrar salida del día. */
+export function registrarSalida(idUsuario) {
+  // TODO(endpoint): POST /api/asistencia/salida  { id_usuario }
+  //   UPDATE ASISTENCIA_DIARIA SET hora_salida = CURTIME()
+  //   WHERE id_usuario = ? AND fecha = CURDATE() AND hora_salida IS NULL;
+  void idUsuario;
+  return pendiente();
+}
+
+/** Listado de obras con su cliente (Dashboard y Obras). */
+export function obras() {
+  // TODO(endpoint): GET /api/obras
+  //   SELECT o.*, c.nombre AS cliente,
+  //     (SELECT COUNT(DISTINCT ao.id_usuario) FROM ASIGNACION_OBRAS ao WHERE ao.id_obra = o.id_obra) AS personal_asignado,
+  //     (SELECT COUNT(*) FROM USO_MATERIALES um WHERE um.id_obra = o.id_obra) AS materiales_registrados
+  //   FROM OBRAS o LEFT JOIN CLIENTES c ON c.id_cliente = o.id_cliente ORDER BY o.fecha_inicio DESC;
+  const conCliente = mock.obras.map((o) => ({
+    ...o, cliente: (mock.clientes.find((c) => c.id_cliente === o.id_cliente) || {}).nombre || null,
+  }));
+  return simulado(conCliente);
+}
+
+/** Catálogo de clientes (formulario de obra). */
+export function clientes() {
+  // TODO(endpoint): GET /api/clientes  →  SELECT id_cliente, nombre, rfc FROM CLIENTES ORDER BY nombre;
+  return simulado(mock.clientes);
+}
+
+/** Alta de obra: se valida en el cliente, pero todavía no se envía. */
+export function crearObra(datos) {
+  // TODO(endpoint): POST /api/obras  { nombre, direccion, presupuesto, fecha_inicio, estado, id_cliente }
+  //   INSERT INTO OBRAS (nombre, direccion, presupuesto, fecha_inicio, estado, id_cliente)
+  //   VALUES (?, ?, ?, ?, ?, ?);
+  void datos;
+  return pendiente();
+}
+
+/** Plantilla por rol (Dashboard). */
+export function resumenPlantilla() {
+  // TODO(endpoint): GET /api/personal/resumen
+  //   SELECT rol, COUNT(*) AS total, SUM(sabe_manejar) AS saben_manejar FROM USUARIOS GROUP BY rol;
+  return simulado(mock.resumenPlantilla);
+}
+
+/** Herramientas con su estado (Dashboard). */
+export function herramientas() {
+  // TODO(endpoint): GET /api/herramientas  →  SELECT id_herramienta, nombre, numero_serie, estado FROM HERRAMIENTAS;
+  return simulado(mock.herramientas);
+}
+
+/** Vehículos con su estado (Dashboard). */
+export function vehiculos() {
+  // TODO(endpoint): GET /api/vehiculos  →  SELECT id_vehiculo, placas, modelo, estado FROM VEHICULOS;
+  return simulado(mock.vehiculos);
+}
+
+/** Consumo de materiales del mes (Dashboard). */
+export function consumoMateriales() {
+  // TODO(endpoint): GET /api/materiales/consumo-mes
+  //   SELECT m.nombre AS material, m.unidad_medida AS unidad, SUM(um.cantidad) AS cantidad
+  //   FROM USO_MATERIALES um JOIN MATERIALES m ON m.id_material = um.id_material
+  //   WHERE um.fecha >= DATE_FORMAT(CURDATE(), '%Y-%m-01')
+  //   GROUP BY m.id_material ORDER BY cantidad DESC LIMIT 5;
+  return simulado(mock.consumoMateriales);
+}
+
+/** Préstamos de herramienta sin devolver (Dashboard). */
+export function prestamosAbiertos() {
+  // TODO(endpoint): GET /api/prestamos/abiertos
+  //   SELECT h.nombre AS herramienta, u.nombre AS trabajador, o.nombre AS obra, ph.fecha_prestamo
+  //   FROM PRESTAMO_HERRAMIENTAS ph
+  //   JOIN HERRAMIENTAS h ON h.id_herramienta = ph.id_herramienta
+  //   JOIN USUARIOS u ON u.id_usuario = ph.id_usuario
+  //   JOIN OBRAS o ON o.id_obra = ph.id_obra
+  //   WHERE ph.fecha_devolucion IS NULL ORDER BY ph.fecha_prestamo;
+  return simulado(mock.prestamosAbiertos);
+}
+
+/** Actividad reciente (Dashboard). */
+export function actividadReciente() {
+  // TODO(endpoint): GET /api/actividad-reciente
+  //   (SELECT 'bitacora' AS tipo, b.fecha, u.nombre, o.nombre AS obra, b.comentarios AS detalle FROM BITACORAS b …)
+  //   UNION ALL (SELECT 'prestamo', ph.fecha_prestamo, … FROM PRESTAMO_HERRAMIENTAS ph …)
+  //   UNION ALL (SELECT 'vehiculo', av.fecha, … FROM ASIGNACION_VEHICULOS av …)
+  //   ORDER BY fecha DESC LIMIT 10;
+  return simulado(mock.actividadReciente);
+}
+
+/** Listado de personal (página Personal). */
+export function personal() {
+  // TODO(endpoint): GET /api/personal
+  //   SELECT id_usuario, nombre, telefono, contacto_emergencia, sabe_manejar, rol FROM USUARIOS ORDER BY nombre;
+  //   (Nunca devolver la columna password.)
+  return simulado(mock.personal);
+}

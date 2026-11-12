@@ -16,8 +16,46 @@
 <body class="sie-protegida bg-surface text-on-surface font-sans antialiased">
   <!-- Sidebar y barra superior los inserta js/layout.js -->
   <main id="sie-main" class="sie-main">
-    <div class="px-margin-mobile md:px-margin xl:px-margin-desktop py-space-xl">
-      <!-- Contenido del Panel General: etapa 2 -->
+    <div class="px-margin-mobile md:px-margin xl:px-margin-desktop py-space-xl flex flex-col gap-space-xl max-w-[1600px]">
+
+      <!-- Saludo -->
+      <section class="bg-surface-container-lowest border border-linea rounded-lg shadow-elev-1 p-space-lg md:p-space-xl flex flex-col lg:flex-row lg:items-center gap-space-lg">
+        <div class="flex-1 min-w-0">
+          <h1 class="text-headline-lg-mobile md:text-headline-lg text-on-surface">
+            Hola de nuevo, <span id="saludo-nombre"></span>
+          </h1>
+          <span id="saludo-rol" class="mt-space-sm inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-info-tinte text-info-texto border border-info-borde text-label-sm uppercase">
+            <span class="material-symbols-outlined text-[14px]">shield_person</span><span></span>
+          </span>
+          <p class="mt-space-sm text-body-md text-on-surface-variant flex flex-wrap items-center gap-x-space-sm gap-y-1">
+            <span class="inline-flex items-center gap-1 text-on-surface font-semibold">
+              <span class="material-symbols-outlined text-[18px]">calendar_today</span><span id="saludo-fecha"></span>
+            </span>
+            <span id="saludo-resumen"></span>
+          </p>
+        </div>
+        <a href="asistencia.html" class="self-start lg:self-auto inline-flex items-center justify-center gap-space-xs h-12 md:h-10 px-space-lg rounded bg-primary-container hover:bg-nav text-white text-label-md transition-colors">
+          <span class="material-symbols-outlined text-[20px]">badge</span>Ir a Mi Asistencia
+        </a>
+      </section>
+
+      <!-- KPI -->
+      <section id="kpis" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter-sm md:gap-gutter" aria-label="Indicadores del día"></section>
+
+      <!-- Obras -->
+      <section aria-labelledby="titulo-obras">
+        <div class="flex flex-wrap items-end justify-between gap-space-sm mb-space-md">
+          <div>
+            <p class="text-label-sm uppercase text-secondary tracking-wider" id="obras-kicker"></p>
+            <h2 id="titulo-obras" class="text-headline-md text-on-surface"></h2>
+          </div>
+          <p id="obras-nota" class="text-body-sm text-on-surface-variant flex items-center gap-1"></p>
+        </div>
+        <div id="obras" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter-sm md:gap-gutter"></div>
+      </section>
+
+      <!-- Tabla principal: asistencia (admin) o mis asignaciones (personal) -->
+      <section id="seccion-tabla" class="bg-surface-container-lowest border border-linea rounded-lg shadow-elev-1 overflow-hidden"></section>
     </div>
   </main>
   <script type="module" src="js/pages/panel.js"></script>

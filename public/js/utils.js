@@ -175,8 +175,23 @@ function bloqueEstado(icono, titulo, detalle, tono) {
 
 export const estadoCarga = (texto = 'Cargando…') => bloqueEstado('progress_activity', texto, '', 'carga');
 export const estadoVacio = (texto = 'Sin registros', detalle = '') => bloqueEstado('inbox', texto, detalle, 'vacio');
-export const estadoError = (detalle = 'Intenta de nuevo más tarde.') =>
-  bloqueEstado('error', 'No se pudieron cargar los datos', detalle, 'error');
+/**
+ * Estado de error. Con reintentar=true agrega un botón data-accion="reintentar"
+ * que la página conecta con su función de carga.
+ */
+export function estadoError(detalle = 'Intenta de nuevo más tarde.', { reintentar = true } = {}) {
+  const boton = reintentar
+    ? html`<div class="flex justify-center -mt-space-lg pb-space-xl"><button type="button" data-accion="reintentar" class="inline-flex items-center gap-1 h-10 px-space-md rounded border border-slate-300 bg-white text-label-md text-primary-container hover:bg-slate-50 hover:border-slate-400"><span class="material-symbols-outlined text-[18px]">refresh</span>Reintentar</button></div>`
+    : '';
+  return html`${bloqueEstado('error', 'No se pudieron cargar los datos', detalle, 'error')}${boton}`;
+}
+
+/** Conecta los botones "Reintentar" de un contenedor con una función. */
+export function alReintentar(contenedor, funcion) {
+  contenedor?.addEventListener('click', (e) => {
+    if (e.target.closest('[data-accion="reintentar"]')) funcion();
+  });
+}
 
 /** Igual que los anteriores pero dentro de una fila de tabla. */
 export function filaEstado(columnas, contenido) {

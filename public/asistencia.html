@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi Asistencia · SCOSIE</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="sie-protegida bg-surface text-on-surface font-sans antialiased">
+  <!-- Sidebar y barra superior los inserta js/layout.js -->
+  <main id="sie-main" class="sie-main">
+    <div class="px-margin-mobile md:px-margin xl:px-margin-desktop py-space-xl flex flex-col gap-space-xl max-w-[1600px]">
+
+      <!-- Encabezado + pestañas -->
+      <header class="flex flex-col lg:flex-row lg:items-end gap-space-lg">
+        <div class="flex-1">
+          <p class="text-label-sm uppercase text-secondary tracking-wider flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">verified_user</span>Módulo de campo · Control de asistencia
+          </p>
+          <h1 class="mt-space-xs text-headline-xl-mobile md:text-headline-xl text-primary">Registro de asistencia</h1>
+        </div>
+        <div id="pestanas" class="hidden p-1 rounded-lg bg-surface-container self-start lg:self-auto" role="tablist" aria-label="Vista">
+          <button type="button" role="tab" data-vista="individual" class="inline-flex items-center gap-space-xs h-10 px-space-md rounded text-label-md">
+            <span class="material-symbols-outlined text-[18px]">badge</span>Mi check-in
+          </button>
+          <button type="button" role="tab" data-vista="monitor" class="inline-flex items-center gap-space-xs h-10 px-space-md rounded text-label-md">
+            <span class="material-symbols-outlined text-[18px]">groups</span>Monitor general
+          </button>
+        </div>
+      </header>
+
+      <!-- ===================== Vista individual ===================== -->
+      <section id="vista-individual" class="grid grid-cols-1 lg:grid-cols-3 gap-gutter-sm md:gap-gutter" aria-label="Mi check-in">
+
+        <!-- Tarjeta principal -->
+        <article class="lg:col-span-2 bg-surface-container-lowest border border-linea rounded-lg shadow-elev-1 overflow-hidden">
+          <div class="flex h-1.5" aria-hidden="true"><span class="flex-[5] bg-secondary"></span><span class="flex-1 bg-on-tertiary-container"></span><span class="flex-[6] bg-primary"></span></div>
+          <div class="p-space-lg md:p-space-xl flex flex-col gap-space-lg">
+
+            <!-- Usuario + estatus -->
+            <div class="flex flex-col sm:flex-row sm:items-center gap-space-md">
+              <div id="ind-usuario" class="flex items-center gap-space-md flex-1 min-w-0"></div>
+              <div id="ind-estatus" class="sm:min-w-[220px] rounded bg-surface-container-low border border-linea px-space-md py-space-sm"></div>
+            </div>
+
+            <!-- Reloj + obra vigente -->
+            <div class="rounded-lg bg-surface-container-low border border-linea p-space-lg grid grid-cols-1 md:grid-cols-2 gap-space-lg items-center">
+              <div>
+                <p class="text-label-sm uppercase text-on-surface-variant">Hora local del dispositivo</p>
+                <p class="mt-space-xs flex items-baseline gap-space-sm">
+                  <span id="reloj-grande" class="text-[44px] leading-none md:text-[52px] font-bold text-primary tabular tracking-tight">--:--:--</span>
+                  <span id="reloj-ampm" class="text-title-lg text-primary"></span>
+                </p>
+                <p id="fecha-grande" class="mt-space-sm text-body-lg text-on-surface"></p>
+              </div>
+              <div id="ind-obra" class="bg-surface-container-lowest border border-linea rounded p-space-md"></div>
+            </div>
+
+            <!-- Botones de registro -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+              <button type="button" id="btn-entrada" class="group text-left rounded-lg bg-primary hover:bg-nav text-white p-space-lg shadow-elev-2 transition-colors flex flex-col gap-space-md min-h-[150px]">
+                <span class="flex items-start justify-between w-full">
+                  <span class="w-12 h-12 rounded bg-white/10 inline-flex items-center justify-center"><span class="material-symbols-outlined text-[28px]">login</span></span>
+                  <span class="px-2 py-0.5 rounded-full bg-white/10 text-label-sm">Pendiente de endpoint</span>
+                </span>
+                <span class="mt-auto">
+                  <span class="block text-headline-md uppercase tracking-tight">Registrar entrada <span aria-hidden="true">→</span></span>
+                  <span class="block text-body-sm text-primary-fixed-dim">Guarda la hora de entrada y la ubicación del día</span>
+                </span>
+              </button>
+              <button type="button" id="btn-salida" class="group text-left rounded-lg bg-surface-container-low border border-linea text-primary p-space-lg transition-colors flex flex-col gap-space-md min-h-[150px] hover:border-outline-variant">
+                <span class="flex items-start justify-between w-full">
+                  <span class="w-12 h-12 rounded bg-white border border-linea inline-flex items-center justify-center text-peligro"><span class="material-symbols-outlined text-[28px]">logout</span></span>
+                  <span class="px-2 py-0.5 rounded-full bg-white border border-linea text-label-sm text-on-surface-variant">Cierre de jornada</span>
+                </span>
+                <span class="mt-auto">
+                  <span class="block text-headline-md uppercase tracking-tight">Registrar salida</span>
+                  <span id="btn-salida-ayuda" class="block text-body-sm text-on-surface-variant">Requiere registrar la entrada primero</span>
+                </span>
+              </button>
+            </div>
+
+            <!-- Ubicación registrada -->
+            <div id="ind-ubicacion" class="rounded-lg bg-surface-container-low border border-linea p-space-md"></div>
+          </div>
+        </article>
+
+        <!-- Columna lateral -->
+        <div class="flex flex-col gap-gutter-sm md:gap-gutter">
+          <article id="ind-metricas" class="bg-surface-container-lowest border border-linea rounded-lg shadow-elev-1 p-space-lg"></article>
+
+          <!-- Recordatorio de seguridad (contenido informativo estático) -->
+          <article class="relative overflow-hidden rounded-lg bg-primary text-white p-space-lg shadow-elev-2">
+            <p class="text-label-sm uppercase text-secondary-fixed-dim flex items-center gap-1">
+              <span class="material-symbols-outlined text-[16px]">health_and_safety</span>Recordatorio de seguridad
+            </p>
+            <h2 class="mt-space-xs text-title-lg">Inspección de EPP antes de iniciar</h2>
+            <ul class="mt-space-sm flex flex-col gap-space-xs text-body-md text-primary-fixed">
+              <li class="flex gap-space-xs"><span class="material-symbols-outlined text-[18px] text-secondary-fixed-dim">check</span>Calzado dieléctrico y casco en buen estado.</li>
+              <li class="flex gap-space-xs"><span class="material-symbols-outlined text-[18px] text-secondary-fixed-dim">check</span>Guantes dieléctricos de la clase adecuada a la tensión.</li>
+              <li class="flex gap-space-xs"><span class="material-symbols-outlined text-[18px] text-secondary-fixed-dim">check</span>Bloqueo y etiquetado (LOTO) antes de intervenir tableros.</li>
+              <li class="flex gap-space-xs"><span class="material-symbols-outlined text-[18px] text-secondary-fixed-dim">check</span>Verificar ausencia de tensión con equipo probado.</li>
+            </ul>
+            <span class="pointer-events-none absolute -right-10 -bottom-10 w-40 h-40 rounded-full bg-white/5" aria-hidden="true"></span>
+          </article>
+        </div>
+
+        <!-- Historial -->
+        <article class="lg:col-span-3 bg-surface-container-lowest border border-linea rounded-lg shadow-elev-1 overflow-hidden">
+          <div class="p-space-lg border-b border-linea flex flex-wrap items-start justify-between gap-space-sm">
+            <div>
+              <h2 class="text-headline-md text-on-surface flex items-center gap-space-xs"><span class="material-symbols-outlined">history</span>Historial de asistencias</h2>
+              <p class="text-body-sm text-on-surface-variant mt-1">Entradas, salidas y ubicación registradas en tus últimos días de trabajo.</p>
+            </div>
+            <span id="historial-chip"></span>
+          </div>
+          <div id="ind-historial"></div>
+        </article>
+      </section>
+
+      <!-- ===================== Vista monitor (JefeAdmin / Admin) ===================== -->
+      <section id="vista-monitor" class="hidden flex-col gap-gutter-sm md:gap-gutter" aria-label="Monitor general">
+        <div id="mon-resumen" class="grid grid-cols-1 sm:grid-cols-3 gap-gutter-sm md:gap-gutter"></div>
+        <article class="bg-surface-container-lowest border border-linea rounded-lg shadow-elev-1 overflow-hidden">
+          <div class="p-space-lg border-b border-linea">
+            <h2 class="text-headline-md text-on-surface">Monitor general de cuadrillas</h2>
+            <p class="text-body-sm text-on-surface-variant mt-1">Asistencia de hoy con la ubicación registrada por cada trabajador (Vista_Control_Asistencia_Admin).</p>
+          </div>
+          <div id="mon-tabla"></div>
+        </article>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="js/pages/asistencia.js"></script>
+</body>
+</html>
