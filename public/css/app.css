@@ -1,0 +1,76 @@
+/*
+ * Estilos propios de SCOSIE que Tailwind (CDN) no cubre o que conviene
+ * centralizar: medidas del layout, comportamiento responsive del sidebar,
+ * tablas zebra, íconos y accesibilidad. Los colores viven en tailwind.config.js.
+ */
+
+:root {
+  --sidebar-w: 260px; /* sidebar completo (>= 1280px), DESIGN.md */
+  --rail-w: 72px;     /* riel de íconos (768px - 1279px), DESIGN.md */
+  --topbar-h: 4rem;   /* barra superior */
+}
+
+html { -webkit-text-size-adjust: 100%; }
+body { overscroll-behavior-y: none; }
+
+/* Las páginas protegidas se ocultan hasta que layout.js valida la sesión
+   y monta el menú; así no se ve contenido antes de redirigir. */
+.sie-protegida:not(.sie-lista) { visibility: hidden; }
+
+/* ---------- Íconos Material Symbols ---------- */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  line-height: 1;
+  user-select: none;
+  flex-shrink: 0;
+}
+.icono-relleno { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+/* ---------- Números tabulares (tablas, horas, KPI) ---------- */
+.tabular, table { font-variant-numeric: tabular-nums; }
+
+/* ---------- Layout: contenido principal ---------- */
+.sie-main { padding-top: var(--topbar-h); min-height: 100vh; }
+
+/* ---------- Layout: sidebar ---------- */
+/* Móvil (< 768px): cajón oculto que se abre con el botón de menú. */
+#sie-sidebar { width: var(--sidebar-w); transform: translateX(-100%); transition: transform .2s ease; }
+#sie-sidebar[data-abierto="true"] { transform: none; box-shadow: 0 20px 25px -5px rgba(15,37,55,.15), 0 8px 10px -6px rgba(15,37,55,.08); }
+#sie-topbar { left: 0; }
+
+/* Tablet (768px - 1279px): riel fijo de 72px solo con íconos. */
+@media (min-width: 768px) {
+  #sie-sidebar { transform: none; width: var(--rail-w); }
+  #sie-topbar { left: var(--rail-w); }
+  .sie-main { padding-left: var(--rail-w); }
+  #sie-backdrop { display: none !important; }
+}
+@media (min-width: 768px) and (max-width: 1279.98px) {
+  .sie-etiqueta { display: none !important; }
+  .sie-nav-link { justify-content: center; padding-left: 0; padding-right: 0; }
+}
+
+/* Escritorio (>= 1280px): sidebar completo de 260px. */
+@media (min-width: 1280px) {
+  #sie-sidebar { width: var(--sidebar-w); }
+  #sie-topbar { left: var(--sidebar-w); }
+  .sie-main { padding-left: var(--sidebar-w); }
+}
+
+/* Scroll discreto dentro del menú del sidebar oscuro */
+#sie-sidebar nav { scrollbar-width: thin; scrollbar-color: rgba(148,163,184,.3) transparent; }
+
+/* ---------- Tablas de datos (DESIGN.md: zebra + hover) ---------- */
+.tabla-sie tbody tr:nth-child(even) { background: #FBFCFE; }
+.tabla-sie tbody tr:hover { background: #F1F5F9; }
+.tabla-sie thead th { position: sticky; top: 0; z-index: 1; }
+
+/* ---------- Accesibilidad ---------- */
+:focus-visible { outline: 3px solid rgba(2, 132, 199, 0.35); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* Avisos flotantes (toast) */
+#sie-avisos { pointer-events: none; }
+#sie-avisos > * { pointer-events: auto; }
