@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Obras e Instalaciones · SCOSIE</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="sie-protegida bg-surface text-on-surface font-sans antialiased">
+  <!-- Sidebar y barra superior los inserta js/layout.js -->
+  <main id="sie-main" class="sie-main">
+    <div class="px-margin-mobile md:px-margin xl:px-margin-desktop py-space-xl flex flex-col gap-space-xl max-w-[1600px]">
+
+      <!-- Encabezado -->
+      <header class="flex flex-col lg:flex-row lg:items-end gap-space-lg">
+        <div class="flex-1">
+          <p class="text-label-sm uppercase text-secondary tracking-wider flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">bolt</span>SCOSIE · Obras de baja tensión
+          </p>
+          <h1 class="mt-space-xs text-headline-xl-mobile md:text-headline-xl text-primary flex flex-wrap items-center gap-space-sm">
+            Obras e instalaciones <span id="conteo-activas"></span>
+          </h1>
+          <p class="mt-space-xs text-body-md text-on-surface-variant">Obras registradas con su cliente, presupuesto, estado y personal asignado.</p>
+        </div>
+        <button type="button" id="btn-nueva" class="self-start lg:self-auto inline-flex items-center gap-space-xs h-12 md:h-10 px-space-lg rounded bg-primary-container hover:bg-nav text-white text-label-md">
+          <span class="material-symbols-outlined text-[20px]">add_circle</span>Registrar nueva obra
+        </button>
+      </header>
+
+      <!-- KPI -->
+      <section id="kpis" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter-sm md:gap-gutter" aria-label="Resumen de obras"></section>
+
+      <!-- Barra de filtros -->
+      <section class="bg-surface-container-lowest border border-linea rounded-lg shadow-elev-1 p-space-md flex flex-col lg:flex-row gap-space-sm" aria-label="Filtros">
+        <label class="relative flex-1">
+          <span class="sr-only">Buscar</span>
+          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[20px] text-apagado" aria-hidden="true">filter_alt</span>
+          <input id="f-buscar" type="search" placeholder="Filtrar por código, obra, cliente o dirección…"
+                 class="w-full h-12 md:h-10 pl-10 pr-3 rounded border border-slate-300 bg-white text-body-md focus:border-electrico focus:ring-[3px] focus:ring-electrico/20 focus:outline-none">
+        </label>
+        <div class="grid grid-cols-2 lg:flex gap-space-sm">
+          <label><span class="sr-only">Estado</span>
+            <select id="f-estado" class="w-full lg:w-44 h-12 md:h-10 px-3 rounded border border-slate-300 bg-white text-body-md focus:border-electrico focus:outline-none">
+              <option value="">Todos los estados</option>
+            </select></label>
+          <label><span class="sr-only">Cliente</span>
+            <select id="f-cliente" class="w-full lg:w-56 h-12 md:h-10 px-3 rounded border border-slate-300 bg-white text-body-md focus:border-electrico focus:outline-none">
+              <option value="">Todos los clientes</option>
+            </select></label>
+        </div>
+        <div class="inline-flex p-1 rounded bg-surface-container self-start" role="group" aria-label="Vista">
+          <button type="button" data-vista="tarjetas" class="inline-flex items-center gap-1 h-10 md:h-8 px-space-md rounded text-label-md"><span class="material-symbols-outlined text-[18px]">grid_view</span>Tarjetas</button>
+          <button type="button" data-vista="tabla" class="inline-flex items-center gap-1 h-10 md:h-8 px-space-md rounded text-label-md"><span class="material-symbols-outlined text-[18px]">table_rows</span>Tabla</button>
+        </div>
+      </section>
+
+      <!-- Listado -->
+      <section aria-label="Listado de obras">
+        <div class="flex items-center justify-between gap-space-sm mb-space-sm">
+          <p id="listado-info" class="text-body-sm text-on-surface-variant"></p>
+          <span id="listado-chip"></span>
+        </div>
+        <div id="listado"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ============ Modal: alta de nueva obra ============ -->
+  <div id="modal-obra" class="hidden fixed inset-0 z-[70] items-end sm:items-center justify-center p-0 sm:p-space-lg bg-[rgba(15,37,55,0.5)] backdrop-blur-[4px]">
+    <div role="dialog" aria-modal="true" aria-labelledby="modal-titulo" class="w-full sm:max-w-2xl max-h-[92vh] flex flex-col bg-surface-container-lowest rounded-t-xl sm:rounded-lg shadow-elev-4">
+      <div class="p-space-lg border-b border-linea flex items-start gap-space-sm">
+        <div class="flex-1">
+          <p class="text-label-sm uppercase text-secondary tracking-wider">Nueva obra</p>
+          <h2 id="modal-titulo" class="text-headline-md text-on-surface">Alta de nueva obra</h2>
+          <p class="text-body-sm text-on-surface-variant">Campos de la tabla OBRAS. Los marcados con * son obligatorios.</p>
+        </div>
+        <button type="button" data-cerrar-modal class="w-10 h-10 inline-flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container" aria-label="Cerrar">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <form id="form-obra" class="flex-1 overflow-y-auto p-space-lg grid grid-cols-1 sm:grid-cols-2 gap-space-lg" novalidate>
+        <div class="sm:col-span-2 flex flex-col gap-space-xs">
+          <label for="obra-nombre" class="text-label-sm uppercase text-archivo-texto">Nombre de la obra *</label>
+          <input id="obra-nombre" type="text" maxlength="150" required class="campo h-12 md:h-10 px-3 rounded border border-slate-300 bg-white text-body-md focus:border-electrico focus:ring-[3px] focus:ring-electrico/20 focus:outline-none">
+          <p class="error-campo hidden text-body-sm text-peligro-texto" data-para="obra-nombre"></p>
+        </div>
+        <div class="sm:col-span-2 flex flex-col gap-space-xs">
+          <label for="obra-cliente" class="text-label-sm uppercase text-archivo-texto">Cliente *</label>
+          <select id="obra-cliente" required class="campo h-12 md:h-10 px-3 rounded border border-slate-300 bg-white text-body-md focus:border-electrico focus:outline-none">
+            <option value="">Selecciona un cliente…</option>
+          </select>
+          <p class="error-campo hidden text-body-sm text-peligro-texto" data-para="obra-cliente"></p>
+        </div>
+        <div class="flex flex-col gap-space-xs">
+          <label for="obra-presupuesto" class="text-label-sm uppercase text-archivo-texto">Presupuesto</label>
+          <div class="flex">
+            <input id="obra-presupuesto" type="number" min="0" max="99999999.99" step="0.01" inputmode="decimal" class="campo flex-1 min-w-0 h-12 md:h-10 px-3 rounded-l border border-slate-300 bg-white text-body-md tabular focus:border-electrico focus:ring-[3px] focus:ring-electrico/20 focus:outline-none">
+            <span class="inline-flex items-center px-3 rounded-r border border-l-0 border-slate-300 bg-[#F1F5F9] text-label-md text-apagado">MXN</span>
+          </div>
+          <p class="error-campo hidden text-body-sm text-peligro-texto" data-para="obra-presupuesto"></p>
+        </div>
+        <div class="flex flex-col gap-space-xs">
+          <label for="obra-fecha" class="text-label-sm uppercase text-archivo-texto">Fecha de inicio</label>
+          <input id="obra-fecha" type="date" class="campo h-12 md:h-10 px-3 rounded border border-slate-300 bg-white text-body-md focus:border-electrico focus:outline-none">
+        </div>
+        <div class="flex flex-col gap-space-xs">
+          <label for="obra-estado" class="text-label-sm uppercase text-archivo-texto">Estado *</label>
+          <select id="obra-estado" required class="campo h-12 md:h-10 px-3 rounded border border-slate-300 bg-white text-body-md focus:border-electrico focus:outline-none">
+            <option value="Cotizada">Cotizada</option>
+            <option value="En Proceso">En Proceso</option>
+            <option value="Terminada">Terminada</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2 flex flex-col gap-space-xs">
+          <label for="obra-direccion" class="text-label-sm uppercase text-archivo-texto">Dirección de la instalación</label>
+          <textarea id="obra-direccion" rows="2" class="campo px-3 py-2 rounded border border-slate-300 bg-white text-body-md focus:border-electrico focus:ring-[3px] focus:ring-electrico/20 focus:outline-none"></textarea>
+        </div>
+        <div id="obra-resultado" class="sm:col-span-2 hidden" role="alert"></div>
+      </form>
+      <div class="p-space-lg border-t border-linea flex flex-col-reverse sm:flex-row sm:justify-end gap-space-sm">
+        <button type="button" data-cerrar-modal class="h-12 md:h-10 px-space-lg rounded border border-slate-300 bg-white hover:bg-slate-50 text-primary-container text-label-md">Cancelar</button>
+        <button type="submit" form="form-obra" class="h-12 md:h-10 px-space-lg rounded bg-primary-container hover:bg-nav text-white text-label-md inline-flex items-center justify-center gap-space-xs">
+          <span class="material-symbols-outlined text-[20px]">save</span>Guardar obra
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Panel lateral: expediente de obra ============ -->
+  <div id="drawer-fondo" class="hidden fixed inset-0 z-[65] bg-[rgba(15,37,55,0.5)] backdrop-blur-[4px]" aria-hidden="true"></div>
+  <aside id="drawer" class="hidden fixed z-[66] inset-y-0 right-0 w-full sm:w-[440px] bg-surface-container-lowest shadow-elev-4 sm:rounded-l-xl flex-col" role="dialog" aria-modal="true" aria-labelledby="drawer-titulo">
+    <div class="p-space-lg border-b border-linea flex items-start gap-space-sm">
+      <div class="flex-1 min-w-0">
+        <p id="drawer-codigo" class="text-label-sm uppercase text-secondary tracking-wider"></p>
+        <h2 id="drawer-titulo" class="text-headline-md text-on-surface"></h2>
+      </div>
+      <button type="button" data-cerrar-drawer class="w-10 h-10 inline-flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container" aria-label="Cerrar expediente">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div id="drawer-cuerpo" class="flex-1 overflow-y-auto p-space-lg flex flex-col gap-space-lg"></div>
+  </aside>
+
+  <script type="module" src="js/pages/obras.js"></script>
+</body>
+</html>

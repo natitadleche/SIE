@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel General · SCOSIE</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="sie-protegida bg-surface text-on-surface font-sans antialiased">
+  <!-- Sidebar y barra superior los inserta js/layout.js -->
+  <main id="sie-main" class="sie-main">
+    <div class="px-margin-mobile md:px-margin xl:px-margin-desktop py-space-xl flex flex-col gap-space-xl max-w-[1600px]">
+
+      <!-- Saludo -->
+      <section class="bg-surface-container-lowest border border-linea rounded-lg shadow-elev-1 p-space-lg md:p-space-xl flex flex-col lg:flex-row lg:items-center gap-space-lg">
+        <div class="flex-1 min-w-0">
+          <h1 class="text-headline-lg-mobile md:text-headline-lg text-on-surface">
+            Hola de nuevo, <span id="saludo-nombre"></span>
+          </h1>
+          <span id="saludo-rol" class="mt-space-sm inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-info-tinte text-info-texto border border-info-borde text-label-sm uppercase">
+            <span class="material-symbols-outlined text-[14px]">shield_person</span><span></span>
+          </span>
+          <p class="mt-space-sm text-body-md text-on-surface-variant flex flex-wrap items-center gap-x-space-sm gap-y-1">
+            <span class="inline-flex items-center gap-1 text-on-surface font-semibold">
+              <span class="material-symbols-outlined text-[18px]">calendar_today</span><span id="saludo-fecha"></span>
+            </span>
+            <span id="saludo-resumen"></span>
+          </p>
+        </div>
+        <a href="asistencia.html" class="self-start lg:self-auto inline-flex items-center justify-center gap-space-xs h-12 md:h-10 px-space-lg rounded bg-primary-container hover:bg-nav text-white text-label-md transition-colors">
+          <span class="material-symbols-outlined text-[20px]">badge</span>Ir a Mi Asistencia
+        </a>
+      </section>
+
+      <!-- KPI -->
+      <section id="kpis" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter-sm md:gap-gutter" aria-label="Indicadores del día"></section>
+
+      <!-- Obras -->
+      <section aria-labelledby="titulo-obras">
+        <div class="flex flex-wrap items-end justify-between gap-space-sm mb-space-md">
+          <div>
+            <p class="text-label-sm uppercase text-secondary tracking-wider" id="obras-kicker"></p>
+            <h2 id="titulo-obras" class="text-headline-md text-on-surface"></h2>
+          </div>
+          <p id="obras-nota" class="text-body-sm text-on-surface-variant flex items-center gap-1"></p>
+        </div>
+        <div id="obras" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter-sm md:gap-gutter"></div>
+      </section>
+
+      <!-- Tabla principal: asistencia (admin) o mis asignaciones (personal) -->
+      <section id="seccion-tabla" class="bg-surface-container-lowest border border-linea rounded-lg shadow-elev-1 overflow-hidden"></section>
+    </div>
+  </main>
+  <script type="module" src="js/pages/panel.js"></script>
+</body>
+</html>
